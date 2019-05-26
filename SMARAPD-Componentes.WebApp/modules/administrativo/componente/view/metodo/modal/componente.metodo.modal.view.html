@@ -1,0 +1,47 @@
+﻿<div class="modal-demo">
+    <div class="modal-header">
+        <h3>{{title}}</h3>
+    </div>
+    <div class="modal-body">
+        <div class="container-view">
+            <div class="row">
+                <div class="col-6">
+                    <label for="nome">
+                        Nome
+                    </label>
+                    <label class="form-control">{{metodo.nome}}</label>
+                </div>
+                <div class="col-6">
+                    <label for="retorno">
+                        Retorno
+                    </label>
+                    <label class="form-control">{{metodo.retorno}}</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <label for="descricao">
+                        Descrição
+                    </label>
+                    <label class="form-control">{{metodo.descricao}}</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <label for="exemplo">
+                        Exemplo
+                    </label>
+                    <textarea name="exemplo" ui-codemirror ui-codemirror-opts="editorOptions" ng-model="metodo.exemplo" class="form-control no-resize" id="exemplo" rows="8" placeholder="Exemplo"></textarea>
+                </div>
+            </div>
+            <card config="configParametro"></card>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary mr-2" ng-click="fecharModal()">
+            <i class="fa fa-ban"></i> Cancelar
+        </button>
+    </div>
+</div>
+
+

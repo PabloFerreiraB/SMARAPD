@@ -1,0 +1,79 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SMARAPD-Componentes.Infrastructure", "SMARAPD-Componentes.Infrastructure\SMARAPD-Componentes.Infrastructure.csproj", "{EFC142C4-74EE-4D25-BC6B-CAA5A4DB06C8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SMARAPD-Componentes.Domain", "SMARAPD-Componentes.Domain\SMARAPD-Componentes.Domain.csproj", "{714E0F15-0371-4A83-9D17-0D16E4082574}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SMARAPD-Componentes.Common", "SMARAPD-Componentes.Common\SMARAPD-Componentes.Common.csproj", "{9846F9B2-1D92-4B39-B288-18768403008C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SMARAPD-Componentes.Service", "SMARAPD-Componentes.Service\SMARAPD-Componentes.Service.csproj", "{1AE56DE4-C74C-4CF9-AF00-924CA1BEA699}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SMARAPD-Componentes.Interface", "SMARAPD-Componentes.Interface\SMARAPD-Componentes.Interface.csproj", "{F445407F-2BF2-41D5-8081-F7CDE1411686}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMARAPD-Componentes.WebApp", "SMARAPD-Componentes.WebApp\SMARAPD-Componentes.WebApp.csproj", "{94569308-8B40-4854-AAD9-E512B112024F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EFC142C4-74EE-4D25-BC6B-CAA5A4DB06C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFC142C4-74EE-4D25-BC6B-CAA5A4DB06C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFC142C4-74EE-4D25-BC6B-CAA5A4DB06C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFC142C4-74EE-4D25-BC6B-CAA5A4DB06C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{714E0F15-0371-4A83-9D17-0D16E4082574}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{714E0F15-0371-4A83-9D17-0D16E4082574}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{714E0F15-0371-4A83-9D17-0D16E4082574}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{714E0F15-0371-4A83-9D17-0D16E4082574}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9846F9B2-1D92-4B39-B288-18768403008C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9846F9B2-1D92-4B39-B288-18768403008C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9846F9B2-1D92-4B39-B288-18768403008C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9846F9B2-1D92-4B39-B288-18768403008C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AE56DE4-C74C-4CF9-AF00-924CA1BEA699}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AE56DE4-C74C-4CF9-AF00-924CA1BEA699}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AE56DE4-C74C-4CF9-AF00-924CA1BEA699}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AE56DE4-C74C-4CF9-AF00-924CA1BEA699}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F445407F-2BF2-41D5-8081-F7CDE1411686}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F445407F-2BF2-41D5-8081-F7CDE1411686}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F445407F-2BF2-41D5-8081-F7CDE1411686}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F445407F-2BF2-41D5-8081-F7CDE1411686}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94569308-8B40-4854-AAD9-E512B112024F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94569308-8B40-4854-AAD9-E512B112024F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94569308-8B40-4854-AAD9-E512B112024F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94569308-8B40-4854-AAD9-E512B112024F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E6CB9FE4-555D-448C-81D9-FF4379AD6B7B}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 7
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://tfs.smarapd.com.br/tfs/smarapd
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = SMARAPD-Componentes.Interface\\SMARAPD-Componentes.Interface.csproj
+		SccProjectName1 = SMARAPD-Componentes.Interface
+		SccLocalPath1 = SMARAPD-Componentes.Interface
+		SccProjectUniqueName2 = SMARAPD-Componentes.Common\\SMARAPD-Componentes.Common.csproj
+		SccProjectName2 = SMARAPD-Componentes.Common
+		SccLocalPath2 = SMARAPD-Componentes.Common
+		SccProjectUniqueName3 = SMARAPD-Componentes.Domain\\SMARAPD-Componentes.Domain.csproj
+		SccProjectName3 = SMARAPD-Componentes.Domain
+		SccLocalPath3 = SMARAPD-Componentes.Domain
+		SccProjectUniqueName4 = SMARAPD-Componentes.Infrastructure\\SMARAPD-Componentes.Infrastructure.csproj
+		SccProjectName4 = SMARAPD-Componentes.Infrastructure
+		SccLocalPath4 = SMARAPD-Componentes.Infrastructure
+		SccProjectUniqueName5 = SMARAPD-Componentes.Service\\SMARAPD-Componentes.Service.csproj
+		SccProjectName5 = SMARAPD-Componentes.Service
+		SccLocalPath5 = SMARAPD-Componentes.Service
+		SccProjectUniqueName6 = SMARAPD-Componentes.WebApp\\SMARAPD-Componentes.WebApp.csproj
+		SccProjectName6 = SMARAPD-Componentes.WebApp
+		SccLocalPath6 = SMARAPD-Componentes.WebApp
+	EndGlobalSection
+EndGlobal

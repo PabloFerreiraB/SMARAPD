@@ -1,0 +1,41 @@
+﻿<div class="container">
+    <div class="card shadow-1 m-4 ">
+        <div class="card-body">
+            <form name="categoriaNewForm" method="post" novalidate>
+                <div class="row">
+                    <!-- Campo Nome -->
+                    <div class="form-group col-sm-6" show-errors='{ showSuccess: true }' >
+                        <label class="form-control-label" for="nomeCategoria">Nome *</label>
+                        <input uib-tooltip="Nome" name="nomeCategoria" type="text" class="form-control" 
+                                placeholder="Nome" maxlength="40" ng-required="true"
+                                ng-model="categoria.nome" />
+                        <div class="invalid-feedback">
+                            <i class="fas fa-exclamation-circle"></i> Campo obrigatório.
+                        </div>
+                    </div>
+                    <!-- Campo Ícone-->
+                    <div class="form-group col-sm-6">
+                        <div angucomplete-alt config="config" id="ex14" placeholder="Ícone" pause="100"
+                            selected-object="dependenciaSelecionada" search-fields="classe" title-field="Ícone" minlength="1" input-class="form-control form-control-small"
+                            match-class="highlight" search-str="searchStr">
+                        </div>
+                        <div class="invalid-feedback">
+                            <i class="fas fa-exclamation-circle"></i> Campo obrigatório.
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+        <div class="card-footer">
+            <!-- Botão Cadastrar -->
+            <a ng-click="save(categoria)" class="btn btn-outline-primary float-right ml-3" href="">
+                <i class="fas fa-save"></i>&nbsp;Salvar
+            </a>
+            <!-- Botão Cancelar-->
+            <a class="btn btn-outline-secondary float-right" href="../../../#/administrativo/categoria">
+                <i class="fas fa-ban"></i>&nbsp;Cancelar
+            </a>
+        </div>
+    </div>
+</div>

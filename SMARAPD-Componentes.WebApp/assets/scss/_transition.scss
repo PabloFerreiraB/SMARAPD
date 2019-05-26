@@ -1,0 +1,11 @@
+﻿.fade-show {
+    transition: all linear 0.4s;
+}
+    .fade-show.ng-hide {
+        opacity: 0;
+        transition: all linear 0.2s;
+    }
+
+    .no-transition{
+        transition: none !important;
+    }

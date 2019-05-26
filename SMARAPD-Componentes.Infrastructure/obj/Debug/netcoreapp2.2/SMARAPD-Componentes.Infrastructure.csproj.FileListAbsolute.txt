@@ -1,0 +1,16 @@
+E:\SMARAPD-Componentes\SMARAPD-Componentes.Infrastructure\bin\Debug\netcoreapp2.2\SMARAPD-Componentes.Infrastructure.deps.json
+E:\SMARAPD-Componentes\SMARAPD-Componentes.Infrastructure\bin\Debug\netcoreapp2.2\SMARAPD-Componentes.Infrastructure.runtimeconfig.json
+E:\SMARAPD-Componentes\SMARAPD-Componentes.Infrastructure\bin\Debug\netcoreapp2.2\SMARAPD-Componentes.Infrastructure.runtimeconfig.dev.json
+E:\SMARAPD-Componentes\SMARAPD-Componentes.Infrastructure\bin\Debug\netcoreapp2.2\SMARAPD-Componentes.Infrastructure.dll
+E:\SMARAPD-Componentes\SMARAPD-Componentes.Infrastructure\bin\Debug\netcoreapp2.2\SMARAPD-Componentes.Infrastructure.pdb
+E:\SMARAPD-Componentes\SMARAPD-Componentes.Infrastructure\bin\Debug\netcoreapp2.2\SMARAPD-Componentes.Common.dll
+E:\SMARAPD-Componentes\SMARAPD-Componentes.Infrastructure\bin\Debug\netcoreapp2.2\SMARAPD-Componentes.Domain.dll
+E:\SMARAPD-Componentes\SMARAPD-Componentes.Infrastructure\bin\Debug\netcoreapp2.2\SMARAPD-Componentes.Common.pdb
+E:\SMARAPD-Componentes\SMARAPD-Componentes.Infrastructure\bin\Debug\netcoreapp2.2\SMARAPD-Componentes.Domain.pdb
+E:\SMARAPD-Componentes\SMARAPD-Componentes.Infrastructure\obj\Debug\netcoreapp2.2\SMARAPD-Componentes.Infrastructure.csprojAssemblyReference.cache
+E:\SMARAPD-Componentes\SMARAPD-Componentes.Infrastructure\obj\Debug\netcoreapp2.2\SMARAPD-Componentes.Infrastructure.csproj.CoreCompileInputs.cache
+E:\SMARAPD-Componentes\SMARAPD-Componentes.Infrastructure\obj\Debug\netcoreapp2.2\SMARAPD-Componentes.Infrastructure.AssemblyInfoInputs.cache
+E:\SMARAPD-Componentes\SMARAPD-Componentes.Infrastructure\obj\Debug\netcoreapp2.2\SMARAPD-Componentes.Infrastructure.AssemblyInfo.cs
+E:\SMARAPD-Componentes\SMARAPD-Componentes.Infrastructure\obj\Debug\netcoreapp2.2\SMARAPD-Componentes.Infrastructure.csproj.CopyComplete
+E:\SMARAPD-Componentes\SMARAPD-Componentes.Infrastructure\obj\Debug\netcoreapp2.2\SMARAPD-Componentes.Infrastructure.dll
+E:\SMARAPD-Componentes\SMARAPD-Componentes.Infrastructure\obj\Debug\netcoreapp2.2\SMARAPD-Componentes.Infrastructure.pdb

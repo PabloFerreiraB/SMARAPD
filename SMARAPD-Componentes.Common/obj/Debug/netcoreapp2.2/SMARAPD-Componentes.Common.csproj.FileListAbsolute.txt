@@ -1,0 +1,11 @@
+E:\SMARAPD-Componentes\SMARAPD-Componentes.Common\bin\Debug\netcoreapp2.2\SMARAPD-Componentes.Common.deps.json
+E:\SMARAPD-Componentes\SMARAPD-Componentes.Common\bin\Debug\netcoreapp2.2\SMARAPD-Componentes.Common.dll
+E:\SMARAPD-Componentes\SMARAPD-Componentes.Common\bin\Debug\netcoreapp2.2\SMARAPD-Componentes.Common.pdb
+E:\SMARAPD-Componentes\SMARAPD-Componentes.Common\obj\Debug\netcoreapp2.2\SMARAPD_Componentes.Common.Resource.CommonMessages.resources
+E:\SMARAPD-Componentes\SMARAPD-Componentes.Common\obj\Debug\netcoreapp2.2\SMARAPD-Componentes.Common.csproj.GenerateResource.cache
+E:\SMARAPD-Componentes\SMARAPD-Componentes.Common\obj\Debug\netcoreapp2.2\SMARAPD-Componentes.Common.csproj.CoreCompileInputs.cache
+E:\SMARAPD-Componentes\SMARAPD-Componentes.Common\obj\Debug\netcoreapp2.2\SMARAPD-Componentes.Common.AssemblyInfoInputs.cache
+E:\SMARAPD-Componentes\SMARAPD-Componentes.Common\obj\Debug\netcoreapp2.2\SMARAPD-Componentes.Common.AssemblyInfo.cs
+E:\SMARAPD-Componentes\SMARAPD-Componentes.Common\obj\Debug\netcoreapp2.2\SMARAPD-Componentes.Common.dll
+E:\SMARAPD-Componentes\SMARAPD-Componentes.Common\obj\Debug\netcoreapp2.2\SMARAPD-Componentes.Common.pdb
+E:\SMARAPD-Componentes\SMARAPD-Componentes.Common\obj\Debug\netcoreapp2.2\SMARAPD-Componentes.Common.csprojAssemblyReference.cache

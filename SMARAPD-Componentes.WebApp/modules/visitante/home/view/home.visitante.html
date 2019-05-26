@@ -1,0 +1,15 @@
+<h4>Apenas Tags Existentes</h4>
+<tags-input ng-model="tags" display-property="name" add-from-autocomplete-only="true">
+    <auto-complete source="loadTags($query)"
+    min-length="0"
+    max-results-to-show="10"
+    ></auto-complete>
+</tags-input>
+
+<h4>Novas Tags Incluídas</h4>
+<tags-input ng-model="tags2" display-property="name" add-from-autocomplete-only="false">
+    <auto-complete source="getTags($query)"
+    min-length="0"
+    max-results-to-show="10"
+    ></auto-complete>
+</tags-input>

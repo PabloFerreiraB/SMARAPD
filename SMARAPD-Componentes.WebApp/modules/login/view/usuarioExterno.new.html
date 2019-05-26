@@ -1,0 +1,119 @@
+﻿<div class="container">
+    <div class="signIn shadow-1">
+        <div class="text-center">
+            <img src="/assets/img/icone.png" alt="logo" width="250" />
+            <h2 class="text-secondary mt-3">SMAR<small>Docs</small></h2>
+        </div>
+
+        <form name="cadastroUsuarioExterno" novalidate>
+
+            <div class="form-group" show-errors='{ showSuccess: true }'>
+                <label>
+                    Nome
+                    <b>*</b>
+                </label>
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
+                    <input type="text" class="form-control" name="nome" placeholder="Nome" maxlength="99" ng-model="usuario.Nome" ui-Nome uib-tooltip="Nome" ng-trim="false" ng-required="true">
+                    <div class="invalid-feedback"><i class="fas fa-exclamation-circle"></i> Campo obrigatório.</div>
+                </div>
+
+            </div>
+
+            <div class="form-group" show-errors='{ showSuccess: true }'>
+                <label>
+                    Email
+                    <b>*</b>
+                </label>
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                    </div>
+                    <input type="email" class="form-control" name="email" placeholder="E-mail" maxlength="99" uib-tooltip="E-mail" ng-model="usuario.Email" ng-required="true">
+                    <div class="invalid-feedback"><i class="fas fa-exclamation-circle"></i> Campo obrigatório.</div>
+                </div>
+            </div>
+
+            <div class="form-group" show-errors='{ showSuccess: true }'>
+                <label>
+                    Login
+                    <b>*</b>
+                </label>
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                    </div>
+                    <input type="text" class="form-control" name="login" placeholder="Login" maxlength="20" uib-tooltip="Login" ng-model="usuario.Login" ng-required="true">
+                    <div class="invalid-feedback"><i class="fas fa-exclamation-circle"></i> Campo obrigatório.</div>
+                </div>
+            </div>
+
+            <div class="form-group" show-errors='{ showSuccess: true }'>
+                <label>
+                    Senha
+                    <b>*</b>
+                </label>
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                    </div>
+                    <input type="password" class="form-control" name="senha" placeholder="Senha" maxlength="70" uib-tooltip="Senha" ng-model="usuario.Senha" ng-required="true">
+                    <div class="invalid-feedback"><i class="fas fa-exclamation-circle"></i> Campo obrigatório.</div>
+                </div>
+            </div>
+
+            <div class="form-group" show-errors='{ showSuccess: true }'>
+                <label>
+                    Confirmar senha*
+                </label>
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                    </div>
+                    <input type="password" class="form-control" ng-class="{'is-invalid' : usuario.Senha != confirmaSenha && confirmaSenha.length > 0}" name="confirmarSenha" placeholder="Confirmação de senha" maxlength="70" uib-tooltip="Confirmar Senha" ng-model="confirmaSenha" ng-required="true">
+                    <div 
+                         ng-hide="usuario.Senha != confirmaSenha && confirmaSenha.length > 0" 
+                         class="invalid-feedback">
+                            <i class="fas fa-exclamation-circle"></i> 
+                                Campo obrigatório.
+                    </div>
+                </div>
+
+                <div class="text-danger" ng-show="usuario.Senha != confirmaSenha && confirmaSenha.length > 0">
+                    <span>
+                        <small><i class="fas fa-exclamation-circle"></i> Senhas não conferem.</small>
+                    </span>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="footer">
+                <div class="float-right">
+                    <button class="btn btn-outline-secondary mr-2" type="button" ng-click="VoltarPaginaInicial()">
+                        <i class="far fa-arrow-alt-circle-left mr-2px"></i>
+                        Voltar
+                    </button>
+                    <button class="btn btn-outline-primary" type="button" ng-click="insertUsuario()">
+                        <i class="fas fa-save mr-2px"></i>
+                        Salvar
+                    </button>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+</div>

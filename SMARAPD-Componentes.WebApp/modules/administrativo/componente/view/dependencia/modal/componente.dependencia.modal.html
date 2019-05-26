@@ -1,0 +1,27 @@
+﻿<div class="modal-demo">
+
+    <div class="modal-header">
+        <h3>{{title}}</h3>
+    </div>
+
+    <form novalidate>
+        <div class="modal-body">
+            <div class="container">
+
+                <div angucomplete-alt config="config" id="ex14" placeholder="Pesquisar pelo nome da dependência" pause="100"
+                     selected-object="dependenciaSelecionada" search-fields="nome" title-field="Dependência"
+                     minlength="1" input-class="form-control form-control-small" match-class="highlight" search-str="searchStr" uib-tooltip="Dependência">
+                </div>
+
+            </div>
+        </div>
+
+        <div class="modal-footer">
+
+            <button ng-click="fecharModal()" type="button" class="btn btn-outline-secondary mr-2" data-dismiss="modal">
+                <i class="fa fa-ban"></i> Cancelar
+            </button>
+
+        </div>
+    </form>
+</div>

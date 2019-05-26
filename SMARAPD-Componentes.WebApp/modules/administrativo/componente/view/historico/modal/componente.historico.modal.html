@@ -1,0 +1,31 @@
+﻿<div class="modal-demo">
+
+    <div class="modal-header">
+        <h5 class="modal-title">
+            Detalhes de histórico
+        </h5>
+    </div>
+
+    <div class="modal-body">
+        <form>
+            <!--<p>{{objHistorico.log}}</p>-->
+
+            <textarea ng-model="objHistorico.log" class="form-control no-resize" rows="10">  </textarea>
+        </form>
+
+        <div class="modal-footer">
+
+            <div class="float-right">
+
+                <button class="btn btn-outline-secondary"
+                        type="button"
+                        ng-click="fecharModal()">
+                    <i class="far fa-arrow-alt-circle-left mr-2"></i>
+                    Voltar
+                </button>
+
+            </div>
+
+        </div>
+    </div>
+</div>

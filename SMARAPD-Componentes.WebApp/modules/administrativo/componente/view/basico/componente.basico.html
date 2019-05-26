@@ -1,0 +1,123 @@
+﻿<form name="vm.componenteForm" class="needs-validation" novalidate>
+    <div class="row">
+        <div class="col-7">
+            <div class="form-group" show-errors='{ showSuccess: true }'>
+                <label for="nome">Nome <span class="text-secondary">*</span></label>
+                <input ng-required="true" ng-model="componente.nome" name="nome" 
+                       type="text" class="form-control" id="nome" placeholder="Nome" 
+                       uib-tooltip="Nome do Componente" maxlength="40">
+                <div class="invalid-feedback"><i class="fas fa-exclamation-circle"></i> Campo obrigatório.</div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="form-group" show-errors='{ showSuccess: true }'>
+                <label for="status">Status <span class="text-secondary">*</span></label>
+                <select ng-required="true" uib-tooltip="Status do Componente" name="status" ng-model="componente.status" class="form-control" id="status" ng-options="status for status in opcaoStatus">
+                    <option disabled value="">Selecione</option>
+                </select>
+                <div class="invalid-feedback"><i class="fas fa-exclamation-circle"></i> Campo obrigatório.</div>
+            </div>
+        </div>
+        <div class="col-2 text-center">
+            <label for="publicacao" >
+                Publicado
+            </label>
+            <div id="publicacao" class="form-group">
+                <div uib-tooltip="Indica se o componente estará apto para publicação ou não">
+                    <label class="switch">
+                        <input ng-model="componente.publicado" type="checkbox" class="primary form-group">
+                        <span name="publicacao" class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group" show-errors='{ showSuccess: true }'>
+                <label for="descricao">Descrição <span class="text-secondary">*</span></label>
+                <textarea ng-required="true" uib-tooltip="Descrição do Componente" name="descricao"
+                          ng-model="componente.descricao" class="form-control no-resize" id="descricao" 
+                          rows="4" placeholder="Descrição" maxlength="300"></textarea>
+                <div class="invalid-feedback"><i class="fas fa-exclamation-circle"></i> Campo obrigatório.</div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <div class="form-group" show-errors='{ showSuccess: true }'>
+                <label for="categoria">Categoria <span class="text-secondary">*</span></label>
+                <select ng-required="true" uib-tooltip="Categoria que o Componente pertence" name="categoria" ng-model="componente.idCategoria" class="form-control" id="categoria" ng-options="categoria.id as categoria.nome for categoria in opcaoCategoria">
+                    <option disabled value="">Selecione</option>
+                </select>
+                <div class="invalid-feedback"><i class="fas fa-exclamation-circle"></i> Campo obrigatório.</div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="form-group" show-errors='{ showSuccess: true }'>
+                <label for="framework">Framework <span class="text-secondary">*</span></label>
+                <select ng-required="true" uib-tooltip="Framework que o Componente pertence" name="framework" ng-model="componente.idFramework" class="form-control" id="framework" ng-options="framework.id as framework.nome for framework in opcaoFramework">
+                    <option disabled value="">Selecione</option>
+                </select>
+                <div class="invalid-feedback"><i class="fas fa-exclamation-circle"></i> Campo obrigatório.</div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="form-group" show-errors='{ showSuccess: true }'>
+                <label for="arquivo">Arquivo <span class="text-secondary">*</span></label>
+                <input ng-required="true" uib-tooltip="Nome do arquivo do Componente no Projeto"
+                       name="arquivo" ng-model="componente.arquivo" type="text" maxlength="20"
+                       class="form-control" id="arquivo" placeholder="Arquivo">
+                <div class="invalid-feedback"><i class="fas fa-exclamation-circle"></i> Campo obrigatório.</div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <label for="observacao">Observação</label>
+                <textarea uib-tooltip="Observações gerais do Componente" name="observacao" 
+                          ng-model="componente.observacao" class="form-control no-resize" 
+                          id="observacao" rows="8" placeholder="Observação"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <label for="exemplo" uib-tooltip="Exemplo de implementação do Componente">Exemplo</label>
+                <textarea name="exemplo" ui-codemirror ui-codemirror-opts="editorOptions" 
+                          ng-model="componente.exemplo" class="form-control no-resize" 
+                          id="exemplo" rows="8" placeholder="Exemplo"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <label for="tags">Tags</label>
+                <tags-input uib-tooltip="Tags que o Componente pertence" name="tags" 
+                            placeholder="Tags" ng-model="componente.tags"
+                            display-property="nome" add-from-autocomplete-only="false">
+                    <auto-complete source="getTags($query)" min-length="0"
+                                   max-results-to-show="10" select-first-match="false">
+                    </auto-complete>
+                </tags-input>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <label for="imagem">Imagem</label>
+                <div>
+                    <img class="img-thumbnail img-fluid mb-3" ng-src="{{componente.imagem ? componente.imagem : defaultImage}}" />
+                </div>
+                <input value="1000000" uib-tooltip="Imagem do Componente" 
+                       name="imagem" type="file" accept="image/jpeg, image/png" 
+                       onchange="angular.element(this).scope().readFile(this.files[0])"
+                       class="form-control" id="imagem" maxlength="500">
+            </div>
+        </div>
+    </div>
+</form>

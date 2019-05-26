@@ -1,0 +1,777 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SMARAPD-Componentes.Interface</name>
+    </assembly>
+    <members>
+        <member name="T:SMARAPD_Componentes.Interface.Auth.CustomAttribute.AuthorizeVisitanteAttribute">
+            <summary>
+            Colocar nos serviços que o usuário tipo visitante pode acessar
+            </summary>
+        </member>
+        <member name="T:SMARAPD_Componentes.Interface.Controllers.AuthController">
+            <summary>
+            Controlador responsável geração do token de autenticação.
+            </summary>
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.AuthController.CreateToken(SMARAPD_Componentes.Common.DTO.AuthContext.LoginDTO)">
+            <summary>
+            Fornece token de autenticação para o usuário.
+            </summary>
+            <param name="login">Credenciais do usuário</param>
+            <returns>Token</returns>
+            <response code="200">Sucesso na operação</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>  
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.AuthController.RefreshToken">
+            <summary>
+            Renova o token de autenticação para o usuário.
+            </summary>
+            <returns>Token</returns>
+            <response code="200">Sucesso na operação</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>  
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.CategoriaController.GetAll">
+            <summary>
+            Retorna uma lista com todas as categorias cadastradas.
+            </summary>
+            <returns>Lista de Categorias</returns>
+            <response code="200">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="500">Demais erros</response>  
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.CategoriaController.GetAllHasComponente">
+            <summary>
+            Lista todas as categorias que possuem componentes.
+            </summary>
+            <returns>Retorna uma lista com todas as categorias que possuem componentes</returns>
+            <response code="200">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="500">Demais erros</response>  
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.CategoriaController.GetById(System.Int32)">
+            <summary>
+            Busca categoria por sua identificação.
+            </summary>
+            <param name="id">Id da categoria que vai ser retornada</param>
+            <returns>Retorna um registro referente ao seu id</returns>
+            <response code="200">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>  
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.CategoriaController.Save(SMARAPD_Componentes.Common.DTO.CategoriaContext.CategoriaPostDTO)">
+            <summary>
+            Registra categoria no sistema.
+            </summary>
+            <param name="dto">Salva os dados no DTO</param>
+            <return>Realiza cadastro de uma nova categoria</return>
+            <response code="200">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>  
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.CategoriaController.Update(System.Int32,SMARAPD_Componentes.Common.DTO.CategoriaContext.CategoriaPutDTO)">
+            <summary>
+            Altera os dados da categoria informada.
+            </summary>
+            <param name="id">Id da categoria que vai ser retornada</param>
+            <param name="dto">Salva os dados no DTO</param>
+            <return>Realiza a atualização de uma categoria</return>
+            <response code="200">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>  
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.CategoriaController.Delete(System.Int32)">
+            <summary>
+            Remove categoria da base de dados.
+            </summary>
+            <param name="id">Id da categoria que vai ser retornada</param>
+            <return>Ultilizado para deletar um registro</return>
+            <response code="204">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>  
+        </member>
+        <member name="T:SMARAPD_Componentes.Interface.Controllers.ComponenteController">
+            <summary>
+            Controlador responsável pelos dados de Componente.
+            </summary>
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.ComponenteController.GetAll">
+            <summary>
+            Lista de todos os Componentes registrados.
+            </summary>
+            <returns>Lista de Componentes</returns>
+            <response code="200">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="500">Demais erros</response>  
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.ComponenteController.GetAllGrid">
+            <summary>
+            Lista de todos os Componentes registrados (view da Grid).
+            </summary>
+            <returns>Lista de Componentes</returns>
+            <response code="200">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="500">Demais erros</response>  
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.ComponenteController.GetById(System.Int32)">
+            <summary>
+            Retorna um componente específico.
+            </summary>
+            <returns>Componente</returns>
+            <response code="200">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>  
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.ComponenteController.GetByIdView(System.Int32)">
+            <summary>
+            Retorna um componente específico pronto para visualização.
+            </summary>
+            <returns>Componente</returns>
+            <response code="200">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>  
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.ComponenteController.Update(System.Int32,SMARAPD_Componentes.Common.DTO.ComponenteContext.ComponentePutDTO)">
+            <summary>
+            Altera dados do componente.
+            </summary>
+            <param name="id">Identificação do componente</param>
+            <param name="dto">Dados do componente</param>
+            <returns>>Sucesso da operação</returns>
+            <response code="200">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.ComponenteController.Delete(System.Int32)">
+            <summary>
+            Remove componente da base de dados, junto a suas propriedades.
+            </summary>
+            <response code="204">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>  
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.ComponenteController.GetAllByCategoria">
+            <summary>
+            Retorna a lista de componentes divididos por Categorias.
+            </summary>
+            <returns>Lista de Componentes dividida em Categorias</returns>
+            <response code="200">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="500">Demais erros</response>  
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.ComponenteController.GetComponenteMenu">
+            <summary>
+            Retorna a lista de itens do menu.
+            </summary>
+            <returns>Lista de Componentes publicados dividida em Categorias</returns>
+            <response code="200">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="500">Demais erros</response>  
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.ComponenteController.Add(SMARAPD_Componentes.Common.DTO.ComponenteContext.ComponentePostDTO)">
+            <summary>
+            Cadastra um novo componente.
+            </summary>
+            <response code="200">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>  
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.ComponenteController.Pesquisa(SMARAPD_Componentes.Common.DTO.ComponenteContext.PesquisaDTO)">
+            <summary>
+            Pesquisa de componentens com base em todas suas propriedades.
+            </summary>
+            <returns></returns>
+            <response code="200">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="500">Demais erros</response>  
+        </member>
+        <member name="T:SMARAPD_Componentes.Interface.Controllers.DependenciaController">
+            <summary>
+            Responsável por gerenciar dados de dependências do componente.
+            </summary>
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.DependenciaController.GetAll">
+            <summary>
+            Busca todas dependências cadastradas.
+            </summary>
+            <returns> Retorna todas dependências cadastradas. </returns>
+            <response code="200">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="500">Demais erros</response>   
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.DependenciaController.GetById(System.Int32)">
+            <summary>
+            Busca uma dependência pelo Id.
+            </summary>
+            <param name="id"> Parâmetro Id. </param>
+            <returns> Sucesso na operação. </returns>
+            <response code="200">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>  
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.DependenciaController.Post(SMARAPD_Componentes.Common.DTO.ComponenteContext.DependenciaPostDTO)">
+            <summary>
+            Adiciona dependência para um componente.
+            </summary>
+            <param name="dependenciaPostDTO"> Dados da dependência. </param>
+            <returns> Sucesso na operação. </returns>
+            <response code="200">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>    
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.DependenciaController.Put(System.Int32,SMARAPD_Componentes.Common.DTO.ComponenteContext.DependenciaPutDTO)">
+            <summary>
+            Altera dependência existente.
+            </summary>
+            <param name="id"> Identificação da dependência. </param>
+            <param name="dependenciaPutDTO"> Dados da dependência. </param>
+            <returns> Sucesso na operação. </returns>
+            <response code="200">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>  
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.DependenciaController.Delete(System.Int32)">
+            <summary>
+            Exclui uma dependência.
+            </summary>
+            <param name="id"> Identificação da dependência. </param>
+            <returns> Sucesso da operação. </returns>
+            <response code="204">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>  
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.DependenciaController.Associar(SMARAPD_Componentes.Common.DTO.ComponenteContext.ComponenteDependenciaPostDTO)">
+            <summary>
+            Associar dependência para um componente.
+            </summary>
+            <param name="dto"> Dados da associação da dependência. </param>
+            <returns> Sucesso na operação. </returns>
+            <response code="200">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>    
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.DependenciaController.Associar(System.Int32,System.Int32)">
+            <summary>
+            Exclui uma dependência associada com um componente.
+            </summary>
+            <param name="idComponente">Identificação do componente</param>
+            <param name="idDepenpendencia">Identificação da dependência</param>
+            <returns> Sucesso na operação. </returns>
+            <response code="200">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>    
+        </member>
+        <member name="T:SMARAPD_Componentes.Interface.Controllers.EventoController">
+            <summary>
+            Gerencia dados relacionados a eventos de um componente.
+            </summary>
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.EventoController.PostEvento(SMARAPD_Componentes.Common.DTO.ComponenteContext.EventoPostDto)">
+            <summary>
+            Adiciona evento a um componente.
+            </summary>
+            <param name="eventoPost">Dados do parâmetro</param>
+            <returns>Sucesso da operação</returns>
+            <response code="201">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>  
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.EventoController.PutEvento(System.Int32,SMARAPD_Componentes.Common.DTO.ComponenteContext.EventoPutDto)">
+            <summary>
+            Altera evento existente.
+            </summary>
+            <param name="eventoId">Dados do parâmetro</param>
+            <param name="eventoPut">Dados do parâmetro</param>
+            <returns>Sucesso da operação</returns>
+            <response code="200">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>   
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.EventoController.DeleteEvento(System.Int32)">
+            <summary>
+            Remove um evento.
+            </summary>
+            <param name="eventoId">Dados do parâmetro</param>
+            <returns>Sucesso da operação</returns>
+            <response code="204">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>  
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.EventoController.GetById(System.Int32)">
+            <summary>
+            Busca um evento pelo id.
+            </summary>
+            <param name="eventoId">Dados do parâmetro</param>
+            <returns>Sucesso da operação</returns>
+            <response code="200">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>  
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.EventoController.GetByIdComponente(System.Int32)">
+            <summary>
+            Busca uma lista de eventos pelo id do componente.
+            </summary>
+            <param name="componenteId">Dados do parâmetro</param>
+            <returns>Sucesso da operação</returns>
+            <response code="200">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>   
+        </member>
+        <member name="T:SMARAPD_Componentes.Interface.Controllers.FrameworkController">
+            <summary>
+            Responsável por gerenciar dados de Framework.
+            </summary>
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.FrameworkController.GetFrameworks">
+            <summary>
+            Busca por todos os frameworks registrados.
+            </summary>
+            <returns>Lista de Frameworks</returns>
+            <response code="200">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="500">Demais erros</response>  
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.FrameworkController.PostFramework(SMARAPD_Componentes.Common.DTO.ComponenteContext.FrameworkPostDTO)">
+            <summary>
+            Adiciona Frameworks a base de dados.
+            </summary>
+            <param name="frameworkDto">Dados do Framework</param>
+            <returns>Framework</returns>
+            <response code="200">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>  
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.FrameworkController.PutFramework(System.Int32,SMARAPD_Componentes.Common.DTO.ComponenteContext.FrameworkPutDTO)">
+            <summary>
+            Altera dados de Framework.
+            </summary>
+            <param name="frameworkId">Identificação do Frameworks</param>
+            <param name="frameworkDto">Dados do Framework</param>
+            <returns>Sucesso da Operação</returns>
+            <response code="200">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>  
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.FrameworkController.DeleteFramework(System.Int32)">
+            <summary>
+            Remove Framework da base de dados.
+            </summary>
+            <param name="frameworkId">Identificação do Framework</param>
+            <returns>Sucesso da Operação</returns>
+            <response code="204">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>  
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.HistoricoController.GetAll">
+            <summary>
+            Retorna registros de log de componentes
+            </summary>
+            <returns>Histórico de componentes</returns>
+            <response code="200">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="500">Demais erros</response>  
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.HistoricoController.GetByIdComponente(System.Int32)">
+            <summary>
+            Retorna registros de log de componentes
+            </summary>
+            <returns>Histórico de componentes</returns>
+            <response code="200">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="500">Demais erros</response>  
+        </member>
+        <member name="T:SMARAPD_Componentes.Interface.Controllers.MetodoController">
+            <summary>
+            Gerencia dados relacionados a métodos de um componente.
+            </summary>
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.MetodoController.PostMetodo(SMARAPD_Componentes.Common.DTO.ComponenteContext.MetodoPostDto)">
+            <summary>
+            Adiciona método a um componente.
+            </summary>
+            <param name="metodoPost">Dados do parâmetro</param>
+            <returns>Sucesso da operação</returns>
+            <response code="201">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>  
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.MetodoController.PutMetodo(System.Int32,SMARAPD_Componentes.Common.DTO.ComponenteContext.MetodoPutDto)">
+            <summary>
+            Altera método existente.
+            </summary>
+            <param name="metodoId">Dados do parâmetro</param>
+            <param name="metodoPut">Dados do parâmetro</param>
+            <returns>Sucesso da operação</returns>
+            <response code="200">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>  
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.MetodoController.DeleteMetodo(System.Int32)">
+            <summary>
+            Remove um método.
+            </summary>
+            <param name="metodoId">Dados do parâmetro</param>
+            <returns>Sucesso da operação</returns>
+            <response code="204">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>  
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.MetodoController.GetById(System.Int32)">
+            <summary>
+            Busca um método pelo id.
+            </summary>
+            <param name="metodoId">Dados do parâmetro</param>
+            <returns>Sucesso da operação</returns>
+            <response code="200">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.MetodoController.GetByIdComponente(System.Int32)">
+            <summary>
+            Busca uma lista de métodos pelo id do componente.
+            </summary>
+            <param name="componenteId">Dados do parâmetro</param>
+            <returns>Sucesso da operação</returns>
+            <response code="200">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>  
+        </member>
+        <member name="T:SMARAPD_Componentes.Interface.Controllers.ParametroController">
+            <summary>
+            Gerencia dados relacionados a parâmetros de um componente.
+            </summary>
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.ParametroController.GetParametrosByComponente(System.Int32)">
+            <summary>
+            Busca os parâmetros pertencentes a um componente.
+            </summary>
+            <param name="componenteId">Identificação do componente para busca</param>
+            <returns>Lista de parâmetros</returns>
+            <response code="200">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>  
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.ParametroController.PostParametro(SMARAPD_Componentes.Common.DTO.ComponenteContext.ParametroPostDTO)">
+            <summary>
+            Adiciona parâmetro a um componente.
+            </summary>
+            <param name="parametroPost">Dados do parâmetro</param>
+            <returns>Sucesso da operação</returns>
+            <response code="200">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>  
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.ParametroController.PutParametro(System.Int32,SMARAPD_Componentes.Common.DTO.ComponenteContext.ParametroPutDTO)">
+            <summary>
+            Altera parâmetro existente.
+            </summary>
+            <param name="parametroId">Identificação do parâmetro</param>
+            <param name="parametroPut">Dados do parâmetro</param>
+            <returns>Sucesso da operação</returns>
+            <response code="200">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>  
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.ParametroController.DeleteParametro(System.Int32)">
+            <summary>
+            Remove um parâmetro.
+            </summary>
+            <param name="parametroId">Identificação do parâmetro</param>
+            <returns>Sucesso da operação</returns>
+            <response code="204">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>   
+        </member>
+        <member name="T:SMARAPD_Componentes.Interface.Controllers.ParametroEventoController">
+            <summary>
+            Gerencia dados relacionados a parâmetros de um evento.
+            </summary>
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.ParametroEventoController.PostParametroEvento(SMARAPD_Componentes.Common.DTO.ComponenteContext.ParametroEventoPostDto)">
+            <summary>
+            Adiciona um parâmetro a um evento.
+            </summary>
+            <param name="parametroEventoPost">Dados do parâmetro</param>
+            <returns>Sucesso da operação</returns>
+            <response code="201">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>  
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.ParametroEventoController.PutParametroEvento(System.Int32,SMARAPD_Componentes.Common.DTO.ComponenteContext.ParametroEventoPutDto)">
+            <summary>
+            Altera o parâmetro de um evento.
+            </summary>
+            <param name="parametroEventoId">Dados do parâmetro</param>
+            <param name="parametroEventoPut">Dados do parâmetro</param>
+            <returns>Sucesso da operação</returns>
+            <response code="200">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>   
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.ParametroEventoController.DeleteParametroEvento(System.Int32)">
+            <summary>
+            Remove o parâmetro de um evento.
+            </summary>
+            <param name="parametroEventoId">Dados do parâmetro</param>
+            <returns>Sucesso da operação</returns>
+            <response code="204">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>  
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.ParametroEventoController.GetById(System.Int32)">
+            <summary>
+            Busca o parâmetro de um evento pelo id.
+            </summary>
+            <param name="parametroEventoId">Dados do parâmetro</param>
+            <returns>Sucesso da operação</returns>
+            <response code="200">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>  
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.ParametroEventoController.GetByIdEvento(System.Int32)">
+            <summary>
+            Busca uma lista de parâmetros pelo id do evento.
+            </summary>
+            <param name="eventoId">Dados do parâmetro</param>
+            <returns>Sucesso da operação</returns>
+            <response code="200">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>  
+        </member>
+        <member name="T:SMARAPD_Componentes.Interface.Controllers.ParametroMetodoController">
+            <summary>
+            Gerencia dados relacionados a parâmetros de um método.
+            </summary>
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.ParametroMetodoController.PostParametroMetodo(SMARAPD_Componentes.Common.DTO.ComponenteContext.ParametroMetodoPostDto)">
+            <summary>
+            Adiciona um parâmetro a um método.
+            </summary>
+            <param name="parametroMetodoPost">Dados do parâmetro</param>
+            <returns>Sucesso da operação</returns>
+            <response code="201">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>  
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.ParametroMetodoController.PutParametroMetodo(System.Int32,SMARAPD_Componentes.Common.DTO.ComponenteContext.ParametroMetodoPutDto)">
+            <summary>
+            Altera o parâmetro de um método.
+            </summary>
+            <param name="parametroMetodoId">Dados do parâmetro</param>
+            <param name="parametroMetodoPut">Dados do parâmetro</param>
+            <returns>Sucesso da operação</returns>
+            <response code="200">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>  
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.ParametroMetodoController.DeleteParametroMetodo(System.Int32)">
+            <summary>
+            Remove o parâmetro de um método.
+            </summary>
+            <param name="parametroMetodoId">Dados do parâmetro</param>
+            <returns>Sucesso da operação</returns>
+            <response code="204">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>  
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.ParametroMetodoController.GetById(System.Int32)">
+            <summary>
+            Busca o parâmetro de um método pelo id.
+            </summary>
+            <param name="parametroMetodoId">Dados do parâmetro</param>
+            <returns>Sucesso da operação</returns>
+            <response code="200">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>    
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.ParametroMetodoController.GetByIdComponente(System.Int32)">
+            <summary>
+            Busca uma lista de parâmetros pelo id do método.
+            </summary>
+            <param name="metodoId">Dados do parâmetro</param>
+            <returns>Sucesso da operação</returns>
+            <response code="200">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>  
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.TagController.GetAll">
+            <summary>
+            Lista de todas as Tags registradas
+            </summary>
+            <returns>Lista de Tags</returns>
+            <response code="200">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>  
+        </member>
+        <member name="T:SMARAPD_Componentes.Interface.Controllers.TipoController">
+            <summary>
+            Controlador de Tipos de dados.
+            </summary>
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.TipoController.GetTiposParametro">
+            <summary>
+            Retorna todos os tipos de dados registrados.
+            </summary>
+            <returns>Lista de Tipo</returns>
+            <response code="200">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>  
+        </member>
+        <member name="T:SMARAPD_Componentes.Interface.Controllers.UsuarioController">
+            <summary>
+            Controlador responsável pelos dados de usuários.
+            </summary>
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.UsuarioController.GridGetAll">
+            <summary>
+            Busca dados usuários específicos para a grid.
+            </summary>
+            <returns>Lista de usuários</returns>
+            <response code="200">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>  
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.UsuarioController.GetAll">
+            <summary>
+            Busca todos os usuário registrados.
+            </summary>
+            <returns>Lista de Usuários</returns>
+            <response code="200">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>  
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.UsuarioController.GetById(System.Int32)">
+            <summary>
+            Busca usuário pela identificação fornecida.
+            </summary>
+            <param name="id">Identificação do usuário</param>
+            <returns>Usuário</returns>
+            <response code="200">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>  
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.UsuarioController.CountNaoAutorizados">
+            <summary>
+            Conta os usuários não autorizados.
+            </summary>
+            <returns>Número usuários não autorizados</returns>
+            <response code="200">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>  
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.UsuarioController.Save(SMARAPD_Componentes.Common.DTO.UsuarioContext.UsuarioPostDTO)">
+            <summary>
+            Inclui usuário no sistema.
+            </summary>
+            <param name="dto">Dados do usuário</param>
+            <response code="200">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>  
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.UsuarioController.UsuarioExternoSave(SMARAPD_Componentes.Common.DTO.UsuarioContext.UsuarioExternoPostDTO)">
+            <summary>
+            Inclui usuário no sistema, de maneira externa.
+            </summary>
+            <param name="dto">Dados do usuário</param>
+            <response code="200">Sucesso na operação</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>  
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.UsuarioController.Put(System.Int32,SMARAPD_Componentes.Common.DTO.UsuarioContext.UsuarioPutDTO)">
+            <summary>
+            Altera dados do usuário.
+            </summary>
+            <param name="id">Identificação do usuário</param>
+            <param name="dto">Dados do usuário</param>
+            <returns>Sucesso da Operação</returns>
+            <response code="200">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.UsuarioController.PutAllAutorizacao">
+            <summary>
+            Autoriza todos os usuários pendentes.
+            </summary>
+            <returns>Sucesso da operação</returns>
+            <response code="200">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.UsuarioController.PutAutorizacao(System.Int32)">
+            <summary>
+            Autoriza usuário a utilizar o sistema.
+            </summary>
+            <param name="id">Identificação do usuário</param>
+            <returns>Sucesso da operação</returns>
+            <response code="200">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>
+        </member>
+        <member name="M:SMARAPD_Componentes.Interface.Controllers.UsuarioController.PutPassword(System.Int32,SMARAPD_Componentes.Common.DTO.UsuarioContext.UsuarioPutPasswordDTO)">
+            <summary>
+            Altera senha de usuário.
+            </summary>
+            <param name="id">Identificação do usuário</param>
+            <param name="dto">Dados para alteração</param>
+            <returns>Sucesso da operação</returns>
+            <response code="200">Sucesso na operação</response>
+            <response code="403">Usuário não autorizado</response>
+            <response code="409">Em caso de erros de validação</response>
+            <response code="500">Demais erros</response>
+        </member>
+    </members>
+</doc>

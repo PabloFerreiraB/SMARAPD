@@ -1,0 +1,64 @@
+﻿<div class="container">
+    <div class="card shadow-1 mt-5">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4 text-center">
+                    <img 
+                         class="rounded-circle user-image img-fit shadow-2"  
+                         ng-src="{{usuario.imagem ? usuario.imagem : defaultImage}}"
+                         alt="imagemPerfil" />
+                </div>
+                <div class="col-12 col-sm-12 col-md-8 col-lg-8">
+
+                    <h4 class="text-center">
+                        Meu perfil
+                    </h4>
+
+                    <hr />
+
+                    <div class="mt-2">
+                        <i class="far fa-user-circle"></i>
+                        <strong>Nome: </strong> {{usuario.nome}} <br />
+                    </div>
+
+                    <div class="mt-2">
+                        <i class="far fa-envelope"></i>
+                        <strong>Email: </strong> {{usuario.email}} <br />
+                    </div>
+
+                    <div class="mt-2">
+                        <i class="far fa-user"></i>
+                        <strong>Login: </strong> {{usuario.login}} <br />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-footer">
+            <div class="float-right">
+                <button class="btn btn-outline-secondary mr-2"
+                        type="button"
+                        ng-click="voltarPagina()">
+                    <i class="fas fa-arrow-circle-left mr-2"></i>
+                    Voltar
+                </button>
+
+                <button type="button"
+                        class="btn btn-outline-primary mr-2"
+                        ng-click="editPassword()">
+                    <i class="fas fa-lock mr-2"></i>
+                    Alterar senha
+                </button>
+
+                <button class="btn btn-outline-primary"
+                        type="button" data-toggle="modal"
+                        data-target="#exampleModal"
+                        ng-click="chamarModalEdicao()">
+                    <i class="fas fa-edit mr-2"></i>
+                    Editar
+                </button>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,118 @@
+
+// Paleta de cores
+
+$darkblue : #303F9F;
+$indigo: #3F51B5;
+$ocean: #1976D2;
+$royal: #007bff;
+$softblue: #2196F3;
+$lightblue: #03A9F4;
+$verylightblue: rgb(211, 238, 250);
+
+$absoluteblack: #000;
+$black: #212121;
+$newblack: 1C1B2D;
+$lightblack:#263238;
+$darkgrey: #757575;
+$grey: #BDBDBD;
+$lightgrey: #F5F5F5;
+$white: #fff;
+
+//Backgrounds
+.bg-darkblue {
+    background: $darkblue;
+}
+
+.bg-indigo {
+    background: $indigo;
+}
+
+.bg-ocean {
+    background: $ocean;
+}
+
+.bg-royal {
+    background: $royal;
+}
+
+.bg-softblue {
+    background: $softblue;
+}
+
+.bg-lightgrey {
+    background: $lightgrey;
+}
+
+.bg-grey {
+    background: $grey;
+}
+
+.bg-darkgrey {
+    background: $darkgrey;
+}
+
+
+.bg-lightblue {
+    background: $lightblue;
+}
+
+.bg-verylightblue {
+    background: $verylightblue;
+}
+
+bg-dark {
+    background: #212121;
+}
+
+.bg-lightblack {
+    background: $lightblack;
+}
+//Text
+.text-darkblue {
+    color: $darkblue;
+}
+
+.text-indigo {
+    color: $indigo;
+}
+
+.text-ocean {
+    color: $ocean;
+}
+
+.text-royal {
+    color: $royal;
+}
+
+.text-softblue {
+    color: $softblue;
+}
+
+.text-lightblue {
+    color: $lightblue;
+}
+
+.linha-card {
+    display: block;
+    border: none;
+    color: white;
+    height: 1px;
+    background: black;
+    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 600, from(#fff), to(#263238)); 
+}
+
+//Fade 
+.bg-fade{
+    background: rgba(33,150,243,1);
+    background: -moz-linear-gradient(top, rgba(33,150,243,1) 0%, rgba(3,169,244,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(33,150,243,1)), color-stop(100%, rgba(3,169,244,1)));
+    background: -webkit-linear-gradient(top, rgba(33,150,243,1) 0%, rgba(3,169,244,1) 100%);
+    background: -o-linear-gradient(top, rgba(33,150,243,1) 0%, rgba(3,169,244,1) 100%);
+    background: -ms-linear-gradient(top, rgba(33,150,243,1) 0%, rgba(3,169,244,1) 100%);
+    background: linear-gradient(to bottom, rgba(33,150,243,1) 0%, rgba(3,169,244,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2196f3', endColorstr='#03a9f4', GradientType=0 );
+}
+
+
+
+

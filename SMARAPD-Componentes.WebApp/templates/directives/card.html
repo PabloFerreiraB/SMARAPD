@@ -1,0 +1,69 @@
+﻿<!--Busca e Adicionar-->
+<div ng-show="config.searchBar && config.addButton || config.data.length > 0"
+     ng-class="config.cardModal ? 'form-group mb-1 mt-1' : 'form-group mb-5 mt-5'">
+    <div class="row">
+        <div ng-show="config.searchBar" ng-class="config.addButton ? 'col-10' : 'col-12'">
+            <input type="text" class="form-control fast-search" ng-model="busca" placeholder="Pesquisar">
+        </div>
+        <div ng-show="config.addButton" class="col-2">
+            <button class="btn btn-outline-primary float-right" ng-click="config.add()">
+                <i class="fas fa-plus mr-2"></i>Adicionar
+            </button>
+        </div>
+    </div>
+</div>
+
+<div ng-show="config.data.length == 0 && config.mesageEmpty" class="jumbotron w-100 bg-light">
+    <p class="text-center text-secondary">{{config.mesageEmpty}}</p>
+</div>
+
+<!--Lista Cards-->
+<div ng-show="config.data.length != 0">
+    <div ng-repeat="item in config.data | orderBy: 'nome' | filter : {nome: busca} as resultado track by $index">
+        <div ng-click="config.cardOnClick(item)" class="card mt-3 mb-3 shadow-1 bg-light">
+            <div ng-class="config.cardModal ? 'card-body pt-1 pb-1' : 'card-body pt-2 pb-2 '">
+                <div ng-class="config.pointer ? 'cursor-pointer' : ''">
+                    <div class="row">
+                        <div class="col-md-10">
+                            <div class="dropdown w-100">
+                                <h5 class="text-bold console d-inline-block">
+                                    <i class="fas fa-hashtag text-darkblue"></i>
+                                    <p class="d-inline mr-0">{{item.nome}}</p>
+                                    <p ng-if="config.type == 'parametro' " class="text-lightblue d-inline ml-0"> {{': ' + item.tipo.nome}}</p>
+                                    <p ng-if="config.type == 'metodo'" class="text-lightblue d-inline ml-0">
+                                        <small><i class="fas fa-arrow-right"></i></small> {{item.retorno}}
+                                    </p>
+                                    <p ng-if="config.type == 'dependencia'" class="d-inline ml-0">
+                                        &nbsp; {{item.status}} &nbsp; {{item.versao}} <br /> <a href="{{item.url}}" target="_blank">{{item.url}}</a>
+                                    </p>
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="dropdown w-100">
+                                <div ng-show="config.actions">
+                                    <button type="button" class="btn btn-light float-right" data-toggle="dropdown"><i class="fas fa-ellipsis-v"></i></button>
+                                    <div class="dropdown-menu dropdown-menu-right card-dropdown text-center">
+                                        <button type="button" ng-if="config.edit" ng-click="config.edit(item)" class="btn btn-link "><i class="fas fa-edit mr-2"></i> Editar</button><br>
+                                        <button type="button" ng-click="config.remove(item)" class="btn btn-link"><i class="fas fa-trash mr-2"></i> Excluir</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-1 mb-1 text-secondary">
+                        {{item.descricao}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-show="resultado.length < 1" class="bg-light p-3 rounded">
+        <p class="m-0 text-secondary">Nenhum resultado encontrado.</p>
+    </div>
+</div>
+
+
+
+

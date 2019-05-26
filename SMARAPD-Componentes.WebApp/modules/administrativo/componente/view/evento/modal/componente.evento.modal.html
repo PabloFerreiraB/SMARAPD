@@ -1,0 +1,147 @@
+﻿<div class="modal-demo">
+    <div class="modal-header">
+        <h3>{{title}}</h3>
+    </div>
+    <div class="modal-body">
+        <div class="container">
+
+            <!--Evento Form-->
+            <form name="eventoForm" class="needs-validation" novalidate>
+
+                <!--ROW 1-->
+                <div class="row">
+                    <!--Nome-->
+                    <div class="form-group col-12" show-errors='{ showSuccess: true }'>
+                        <label class="form-control-label" for="inputNome">Nome *</label>
+                        <input type="text" id="inputNome" class="form-control" name="nomeEvento"
+                               placeholder="Nome" ng-model="evento.nome" minlength="0" maxlength="30"
+                               ng-required="true" data-toggle="tooltip" title="Nome do evento">
+                        <div class="invalid-feedback">
+                            <i class="fas fa-exclamation-circle"></i> Campo obrigatório.
+                        </div>
+                    </div>
+                </div>
+
+                <!--ROW 2-->
+                <div class="row">
+                    <!--Descrição-->
+                    <div class="col-12">
+                        <label>Descrição</label>
+                        <textarea class="form-control no-resize" name="descricaoEvento" rows="3"
+                                  placeholder="Descrição" ng-model="evento.descricao" maxlength="100"
+                                  data-toggle="tooltip" title="Descrição do evento"></textarea>
+                    </div>
+                </div>
+
+                <!--ROW 3-->
+                <div class="row">
+                    <!--Exemplo-->
+                    <div class="col-12">
+                        <div class="form-group p-0">
+                            <label for="exemploEvento" uib-tooltip="Exemplo de implementação do Evento">Exemplo</label>
+                            <textarea name="exemploEvento" ui-codemirror ui-codemirror-opts="editorOptions"
+                                      ng-model="evento.exemplo" class="form-control no-resize" id="exemploEvento"
+                                      rows="10" placeholder="Exemplo">
+                            </textarea>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <div class="mt-2">
+                <button class="btn btn-primary mb-4" type="button" data-toggle="collapse" data-target="#collapseParametro" aria-expanded="false" aria-controls="collapseParametro">
+                    <i class="fas fa-caret-down mr-2"></i> Parâmetros
+                </button>
+
+                <div class="collapse" id="collapseParametro">
+                    <!--Parâmetro Form-->
+                    <div style="border: 1px solid #ced4da; padding: 15px 20px 15px 20px; border-radius: 0.25rem;" class="form-group">
+                        <div class="ml-0">
+                            <h5 class="modal-title"><strong>Parâmetros</strong></h5>
+                        </div>
+                        <form name="parametroForm" novalidate>
+                            <!--ROW 4-->
+                            <div class="row mt-2">
+                                <!--Nome-->
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label>Nome *</label>
+                                        <input required ng-model="parametro.nome" class="form-control"
+                                               type="text" ng-class="{'is-invalid': parametroForm.nomeParametro.$invalid && (parametroForm.nomeParametro.$dirty || parametroForm.nomeParametro.$touched)}"
+                                               name="nomeParametro" placeholder="Nome" data-toggle="tooltip" title="Nome do parâmetro" maxlength="10" />
+                                        <span class="text-danger" ng-show="parametroForm.nomeParametro.$invalid && (parametroForm.nomeParametro.$dirty || parametroForm.nomeParametro.$touched)">
+                                            <small><i class="fas fa-exclamation-circle"></i> Campo obrigatório.</small>
+                                        </span>
+                                    </div>
+                                </div>
+                                <!--Tipo-->
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label>Tipo *</label>
+                                        <select name="tipoParametro" ng-model="parametro.tipoId" class="form-control"
+                                                ng-class="{'is-invalid': parametroForm.tipoParametro.$invalid && (parametroForm.tipoParametro.$dirty || parametroForm.tipoParametro.$touched)}"
+                                                ng-options="tipo.id as tipo.nome for tipo in tipos" ng-required="true"
+                                                data-toggle="tooltip" title="Tipo do parâmetro">
+                                            <option disabled value="">Selecione</option>
+                                        </select>
+                                        <span class="text-danger" ng-show="parametroForm.tipoParametro.$invalid && (parametroForm.tipoParametro.$dirty || parametroForm.tipoParametro.$touched)">
+                                            <small><i class="fas fa-exclamation-circle"></i> Campo obrigatório.</small>
+                                        </span>
+                                    </div>
+                                </div>
+                                <!--Obrigatório-->
+                                <div class="col-4">
+                                    <label>Obrigatório</label>
+                                    <div id="obrigatorio">
+                                        <label class="switch" data-toggle="tooltip" title="Obrigatoriedade">
+                                            <input type="checkbox" class="primary" ng-model="parametro.obrigatorio" />
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--ROW 5-->
+                            <div class="row">
+                                <!--Descrição-->
+                                <div class="col-12">
+                                    <div class="form-group" >
+                                        <label class="form-control-label" for="descricaoParametro">Descrição</label>
+                                        <div data-toggle="tooltip" title="Descrição do parâmetro">
+                                            <textarea class="form-control no-resize" name="descricaoParametro" rows="3"
+                                                      placeholder="Descrição" ng-model="parametro.descricao"
+                                                      maxlength="100">
+                                            </textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--ROW 6-->
+                            <div class="row">
+                                <!--Adicionar Parametro-->
+                                <div class="col-12 mt-2">
+                                    <button class="btn btn-outline-primary mt-2" ng-click="adicionarParametro(parametro)" ng-disabled="parametroForm.$invalid">
+                                        <i class="fas fa-plus mr-2"></i>Adicionar
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!--Cards-->
+                            <card config="configEvento"></card>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary mr-2" ng-click="closeModal()">
+            <i class="fa fa-ban mr-2"></i> Cancelar
+        </button>
+        <button ng-click="adicionarEvento(evento)" class="btn btn-outline-primary">
+            <i class="fas fa-save mr-2"></i> Salvar
+        </button>
+    </div>
+</div>

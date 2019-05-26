@@ -1,0 +1,40 @@
+﻿.nav-pills {
+    .nav-item {
+        a {
+            text-decoration: none;
+            color: white;
+            transition: 0.2s;
+            background-color: $lightblue;
+
+            &:hover {
+                text-decoration: none;
+                color: white;
+                font-weight: 400;
+                border-radius: 0;
+                background-color: $royal;
+            }
+        }
+
+        .active {
+            text-decoration: none;
+            font-weight: 400;
+            border-radius: 0;
+            -moz-box-shadow: inset 0 0 10px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+            -webkit-box-shadow: inset 0 0 10px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+            background-color: $royal;
+        }
+    }
+
+    .nav-link {
+        border-radius: 0px !important;
+    }
+}
+
+#myTab li:first-child a {
+    border-top-left-radius: 5px !important;
+}
+
+#myTab li:last-child a {
+    border-top-right-radius: 5px !important;
+}

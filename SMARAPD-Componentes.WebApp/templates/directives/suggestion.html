@@ -1,0 +1,44 @@
+<ng-form name="suggestionForm">
+    <div class="angucomplete-holder">
+        <div class="form-group" show-errors='{ showSuccess: true }'>
+
+            <label>{{titleField}}</label><label ng-show="config.isRequired" for="">&nbsp*</label>
+
+            <div class="input-group">
+
+
+            <input id="{{id}}_value" name="suggestionField" ng-model="searchStr" ng-disabled="disableInput"
+                type="{{type}}" placeholder="{{placeholder}}" maxlength="{{maxlength}}" ng-focus="onFocusHandler()"
+                class="{{inputClass}} form-control was-validated" ng-focus="resetHideResults()"
+                ng-blur="hideResults($event)" autocapitalize="off" autocorrect="off" autocomplete="off"
+                ng-change="inputChangeHandler(searchStr)" ng-required="config.isRequired"
+                aria-describedby="basic-addon1" uib-tooltip="{{config.tooltip}}" />
+                <div class="input-group-append">
+                        <span class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></span>
+                    </div>
+                    <div class="invalid-feedback"><i class="fas fa-exclamation-circle"></i> Campo obrigatório.</div>
+            </div>
+
+        </div>
+    </div>
+    <div id="{{id}}_dropdown" class="angucomplete-dropdown" ng-show="showDropdown">
+        <div class="angucomplete-searching" ng-show="searching" ng-bind="textSearching"> </div>
+        <div class="angucomplete-searching" ng-show="!searching && (!results || results.length == 0)"
+            ng-bind="textNoResults"></div>
+        <div class="angucomplete-row" ng-repeat="result in results" ng-click="selectResult(result)"
+            ng-mouseenter="hoverRow($index)"
+            ng-class="{suggestionSelectedItem: result.originalObject.data[config.fieldValue] == searchStr}">
+            <div class="angucomplete-description">
+                {{result.originalObject.data[config.fieldValue]}}
+                <i ng-class="result.originalObject.data[config.iconValue]"></i>
+            </div>
+
+        </div>
+        <div class="angucomplete-searching" ng-show="!searching && (results.length > 0)" ng-bind="textResults"></div>
+    </div>
+
+
+    <!-- <span id="iconeInput" class="fas fa-search form-control-feedback"></span> -->
+
+    </div>
+</ng-form>

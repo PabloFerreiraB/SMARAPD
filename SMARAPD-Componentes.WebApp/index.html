@@ -1,0 +1,302 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br" ng-app="app">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Index</title>
+    <link rel="shortcut icon" href="/assets/icon-minimalist.ico" />
+
+    <!-- Libraries -->
+    <script src="scripts/libs/jquery/jquery.js"></script>
+    <script src="scripts/libs/bootstrap/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="scripts/libs/bootstrap/bootstrap.css" />
+    <script src="scripts/libs/angular/angular.js"></script>
+    <script src="scripts/libs/angular/angular-route.js"></script>
+    <script src="scripts/directives/grid/grid.js"></script>
+    <script src="scripts/libs/tag-input/ng-tags-input.js"></script>
+    <script src="scripts/libs/angular/bootstrap-notify.min.js"></script>
+    <script src="scripts/libs/angular.animate/angular-animate.js"></script>
+    <link rel="stylesheet" href="scripts/libs/code-mirror/codemirror.css" />
+    <script src="scripts/libs/code-mirror/codemirror.js"></script>
+    <script src="scripts/libs/code-mirror/css.js"></script>
+    <script src="scripts/libs/code-mirror/javascript.js"></script>
+    <script src="scripts/libs/code-mirror/xml.js"></script>
+    <script src="scripts/libs/code-mirror/htmlmixed.js"></script>
+    <script src="scripts/libs/angular/ui-bootstrap-tpls-3.0.6.min.js"></script>
+    <script src="scripts/libs/loading-bar/js/loading-bar.min.js"></script>
+    <script src="scripts/libs/moment/moment.js"></script>
+    <script src="scripts/libs/moment/angular-moment.js"></script>
+
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/app.css" />
+    <link rel="stylesheet" href="scripts/libs/tag-input/ng-tags-input.bootstrap.css">
+    <link rel="stylesheet" href="scripts/libs/tag-input/ng-tags-input.css">
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/scripts/libs/fontawesome/css/all.css" />
+    <link rel="stylesheet" href="scripts/libs/animate/animate.css" />
+    <link rel="stylesheet" href="scripts/libs/loading-bar/css/loading-bar.min.css" />
+
+    <!-- Configs -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/system-constants.js"></script>
+    <script src="scripts/Interceptor/authInterceptor.js"></script>
+
+    <!-- Factorys -->
+    <script src="scripts/factorys/responseService.factory.js"></script>
+    <script src="scripts/factorys/messages.factory.js"></script>
+    <script src="scripts/factorys/alert.factory.js"></script>
+
+    <!-- Services -->
+    <script src="modules/administrativo/componente/service/status.service.js"></script>
+    <script src="scripts/services/dialog.service.js"></script>
+    <script src="modules/administrativo/componente/service/tag.service.js"></script>
+    <script src="scripts/services/auth.service.js"></script>
+    <script src="scripts/services/jwt.service.js"></script>
+    <script src="scripts/services/icone.service.js"></script>
+
+    <!--Common-->
+    <script src="modules/common/modal/controller/yesNoConfirm.controller.js"></script>
+
+    <!-- Login -->
+    <script src="modules/login/login.route.js"></script>
+    <script src="modules/login/controller/login.controller.js"></script>
+
+    <!--Menu-->
+    <script src="modules/menu/controller/menuController.js"></script>
+    <script src="modules/menu/service/menuService.js"></script>
+
+    <!-- Usuário-->
+    <script src="modules/administrativo/usuario/usuario.route.js"></script>
+    <script src="modules/administrativo/usuario/service/usuario.service.js"></script>
+    <script src="modules/administrativo/usuario/controller/usuario.grid.controller.js"></script>
+    <script src="modules/administrativo/usuario/controller/usuario.new.controller.js"></script>
+    <script src="modules/administrativo/usuario/controller/usuario.edit.controller.js"></script>
+    <script src="modules/administrativo/usuario/controller/usuario.view.controller.js"></script>
+    <script src="modules/administrativo/usuario/controller/usuario.edit.password.controller.js"></script>
+    <script src="modules/administrativo/usuario/controller/usuario.edit.ativacao.controller.js"></script>
+
+    <!-- Componente Controllers -->
+    <script src="modules/administrativo/componente/componente.route.js"></script>
+
+    <!-- Evento -->
+    <script src="modules/administrativo/componente/controller/evento/componente.evento.edit.controller.js"></script>
+    <script src="modules/administrativo/componente/controller/evento/modal/componente.evento.modal.controller.js"></script>
+    <script src="modules/administrativo/componente/controller/evento/modal/componente.evento.modal.view.controller.js"></script>
+
+    <!-- Método -->
+    <script src="modules/administrativo/componente/controller/metodo/componente.metodo.edit.controller.js"></script>
+    <script src="modules/administrativo/componente/controller/metodo/modal/componente.metodo.modal.controller.js"></script>
+    <script src="modules/administrativo/componente/controller/metodo/modal/componente.metodo.modal.view.controller.js"></script>
+
+    <!-- Parâmetro-->
+    <script src="modules/administrativo/componente/controller/parametro/componente.parametro.edit.controller.js"></script>
+    <script src="modules/administrativo/componente/controller/parametro/modal/componente.parametro.modal.controller.js"></script>
+    <script src="modules/administrativo/componente/controller/parametro/modal/componente.parametro.modal.view.controller.js"></script>
+
+    <!-- Grid -->
+    <script src="modules/administrativo/componente/controller/grid/componente.grid.controller.js"></script>
+
+    <!-- Principal -->
+    <script src="modules/administrativo/componente/controller/componente.principal.edit.controller.js"></script>
+    <script src="modules/administrativo/componente/controller/componente.principal.new.controller.js"></script>
+    <script src="modules/administrativo/componente/controller/componente.principal.view.controller.js"></script>
+
+    <!-- Componente Service -->
+    <script src="modules/administrativo/componente/service/componente.service.js"></script>
+    <script src="modules/administrativo/componente/service/framework.service.js"></script>
+    <script src="modules/administrativo/componente/service/metodo.service.js"></script>
+    <script src="modules/administrativo/componente/service/evento.service.js"></script>
+    <script src="modules/administrativo/componente/service/parametro.metodo.service.js"></script>
+    <script src="modules/administrativo/componente/service/parametro.evento.service.js"></script>
+    <script src="modules/administrativo/componente/service/parametro.service.js"></script>
+    <script src="modules/administrativo/componente/service/status.service.js"></script>
+    <script src="modules/administrativo/componente/service/tag.service.js"></script>
+    <script src="modules/administrativo/componente/service/tipo.service.js"></script>
+
+
+    <!-- Categoria -->
+    <script src="modules/administrativo/categoria/categoria.route.js"></script>
+    <script src="modules/administrativo/categoria/service/categoria.service.js"></script>
+    <script src="modules/administrativo/categoria/controller/categoria.grid.controller.js"></script>
+    <script src="modules/administrativo/categoria/controller/categoria.new.controller.js"></script>
+    <script src="modules/administrativo/categoria/controller/categoria.edit.controller.js"></script>
+    <script src="modules/administrativo/categoria/controller/categoria.view.controller.js"></script>
+
+    <!-- Visitante -->
+    <script src="modules/visitante/visitante.route.js"></script>
+    <script src="modules/visitante/componente/controller/componente.controller.js"></script>
+    <script src="modules/login/controller/usuarioExterno.new.controller.js"></script>
+
+    <!-- Tags -->
+    <script src="modules/visitante/home/controller/home.visitante.controller.js"></script>
+
+    <!-- Dependência -->
+    <script src="modules/administrativo/dependencia/dependencia.route.js"></script>
+    <script src="modules/administrativo/dependencia/service/dependencia.service.js"></script>
+    <script src="modules/administrativo/dependencia/controller/dependencia.grid.controller.js"></script>
+    <script src="modules/administrativo/dependencia/controller/dependencia.new.controller.js"></script>
+    <script src="modules/administrativo/dependencia/controller/dependencia.edit.controller.js"></script>
+    <script src="modules/administrativo/dependencia/controller/dependencia.view.controller.js"></script>
+    <!-- Componente Dependência -->
+    <script src="modules/administrativo/componente/controller/dependencia/componente.dependencia.edit.controller.js"></script>
+    <script src="modules/administrativo/componente/controller/dependencia/modal/componente.dependencia.modal.controller.js"></script>
+    <script src="modules/administrativo/componente/controller/dependencia/modal/componente.dependencia.modal.view.controller.js"></script>
+
+
+    <!-- Home -->
+    <script src="modules/administrativo/home/homeAdministrativo.route.js"></script>
+    <script src="modules/administrativo/home/controller/homeAdministrativo.controller.js"></script>
+
+    <!--NotFound-->
+    <script src="modules/notfound/controller/notFound.controller.js"></script>
+    <script src="modules/notfound/notFound.route.js"></script>
+
+    <!--Denied-->
+    <script src="modules/denied/controller/denied.controller.js"></script>
+    <script src="modules/denied/denied.route.js"></script>
+
+
+    <!-- Directives -->
+    <script src="scripts/directives/uiNome.js"></script>
+    <script src="scripts/directives/ui-codemirror.js"></script>
+    <script src="scripts/directives/show-errors.js"></script>
+    <script src="scripts/directives/show-errorsConfig.js"></script>
+    <script src="scripts/directives/card/card.js"></script>
+    <script src="scripts/directives/suggestion/suggestion.js"></script>
+
+    <!-- Filters -->
+    <script src="scripts/filters/ellipsis.js"></script>
+
+    <!-- Index -->
+    <script src="index.route.js"></script>
+    <script src="index.controller.js"></script>
+
+    <!-- Perfil -->
+    <script src="modules/perfil/controller/perfil.controller.js"></script>
+    <script src="modules/perfil/controller/perfil.modal.controller.js"></script>
+    <script src="modules/perfil/controller/perfil.,modal.editPassword.js"></script>
+
+    <!-- Histórico -->
+    <script src="modules/administrativo/componente/controller/historico/componente.historico.js"></script>
+    <script src="modules/administrativo/componente/controller/historico/modal/componente.historico.modal.controller.js"></script>
+    <script src="modules/administrativo/componente/service/historico.service.js"></script>
+    <script src="modules/administrativo/componente/controller/historico/componente.historico.view.js"></script>
+
+</head>
+
+<body class="bg-lightgrey">
+    <!--Conteudo (Menu lateral, Navbar e conteudo)-->
+    <div ng-if="isLogged">
+        <div class="d-flex" id="wrapper" ng-controller="menuController">
+            <!-- Sidebar -->
+            <nav class=" sidebar shadow-3" id="sidebar-wrapper">
+                <div class="sidebar-header pl-3 pt-2">
+                    <div class="mx-auto">
+                        <a class="navbar-brand" href="/#/home">
+                            <img class="d-inline-block" src="/assets/img/icone.png" width="65" height="45">
+                        </a>
+                        <h5 class="d-inline-block" style="cursor:pointer" ng-click="navigateToHome()">SMAR<small>Docs</small></h5>
+                    </div>
+                </div>
+                <form novalidate ng-show="isVisitante">
+                    <div class="input-group input-group-sm mb-3 pl-2 pr-2 mt-3">
+                        <input type="search" class="form-control fast-search" placeholder="Buscar componente" ng-model="busca">
+                        <div class="input-group-append">
+                            <button class="btn bg-dark text-white" type="submit" ng-click="buscar()"><i class="fas fa-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+
+                <!--Menu de componentes (Visitante)-->
+                <div ng-show="isVisitante" ng-repeat="item in menu">
+                    <p class="pl-3 list-title"><i ng-class=":: item.icone == null ? 'fas fa-cube' : item.icone" class="mr-2"></i>{{item.nome}}</p>
+                    <ul class="mt-2 list-unstyled mb-1">
+                        <li ng-repeat="componente in item.componentes" ng-click="navigateToComponent(componente.id)">{{componente.nome}}</li>
+                    </ul>
+                </div>
+
+                <!--Menu administrativo (Super User)-->
+                <div ng-show="isSuperUser" ng-repeat="item in menuAdmin">
+                    <p class="pl-3 list-title"><i ng-class=":: item.icone == null ? 'fas fa-cube' : item.icone" class="mr-2"></i>{{item.nome}}</p>
+                    <ul class="mt-2 list-unstyled mb-1">
+                        <li ng-repeat="section in item.componentes" ng-click="navigateToSection(section.url)">{{section.nome}}</li>
+                    </ul>
+                </div>
+
+            </nav>
+            <!-- /#sidebar-wrapper -->
+            <!-- Page Content -->
+            <div id="page-content-wrapper">
+
+                <nav class="navbar navbar-expand-lg text-white bg-fade mb-0 shadow-2">
+                    <div class="container-fluid">
+                        <button class="btn btn-primary" id="menu-toggle"><i class="fas fa-bars"></i></button>
+
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+
+                        <div class="col-auto mx-auto">
+                            <h3 class="text-center text-white">{{title}}</h3>
+                        </div>
+
+                        <div class="d-inline-block" ng-controller="indexController">
+                            <ul class="navbar-nav mt-2 ml-auto mt-lg-0 text-right">
+                                <li class="nav-item p-0 d-inline-block">
+                                    <div class="row">
+                                        <span>
+                                            <p class="d-inline-block mr-2 mt-2 username">{{usuario.login}}</p>
+                                        </span>
+
+                                        <div class="dropdown">
+                                            <img class="shadow-1 rounded-circle d-inline-block img-user img-fit"
+                                                 id="dLabel" data-toggle="dropdown"
+                                                 aria-haspopup="true" aria-expanded="true" style="cursor:pointer"
+                                                 ng-src="{{usuario.imagem ? usuario.imagem : defaultImage}}">
+                                            <div class="dropdown-menu p-0" aria-labelledby="dLabel">
+                                                <div class="card p-0 pt-2">
+                                                    <div class="card-body text-center text-secondary p-0">
+                                                        <a class="dropdown-item cool-link d-block mb-1" ng-click="goPerfil()">Meu Perfil</a>
+                                                        <a ng-show="isAdmin" class="dropdown-item cool-link d-block" ng-click="goMenuPrincipal()">Painel</a>
+                                                    </div>
+                                                    <div class="card-footer">
+                                                        <button class="btn btn-outline-danger btn-block" ng-click="logout()">Sair</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class="container-fluid">
+                    <div ng-view></div>
+                </div>
+            </div>
+            <!-- /#page-content-wrapper -->
+
+        </div>
+        <!-- /#wrapper -->
+
+        <script>
+            $("#menu-toggle").click(function (e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+            });
+        </script>
+    </div>
+
+    <!--Login e Cadastro-->
+    <div ng-if="!isLogged">
+        <div ng-view></div>
+    </div>
+
+</body>
+
+</html>

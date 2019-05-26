@@ -1,0 +1,65 @@
+﻿<div ng-show="componente.urlImagem" class="jumbotron bg-lightgrey shadow-1 w-100 p-4 mt-0 mb-1">
+    <img ng-src="{{componente.urlImagem ? componente.urlImagem : '/assets/img/img-placeholder.png'}}" class="img-thumbnail mx-auto d-block" id="imgDescricao" height="200" alt="Imagem do componente" ng-click="toggleModal()" />
+</div>
+
+<div id="imgModal" class="modal">
+    <span class="fechar" data-dismiss="modal">&times;</span>
+    <img class="conteudo-modal" id="img01">
+</div>
+
+<div class="jumbotron bg-lightgrey shadow-1 w-100 p-1 mt-2">
+    <div class="row justify-content-center text-center">
+        <div class="col-sm-3">
+            <small><i class="fas fa-user-circle mr-1"></i>{{componente.usuario.nome}}</small>
+        </div>
+        <div class="col-sm-3">
+            <small><i class="far fa-clock mr-1"></i>{{componente.dataCriacao | date:'dd/MM/yyyy'}}</small>
+        </div>
+        <div class="col-sm-3">
+            <small><i class="fas fa-tag mr-2"></i>{{componente.categoria.nome}}</small>
+        </div>
+        <div class="col-sm-3">
+            <small><i class="{{componente.framework.icone}}"></i></small>
+        </div>
+    </div>
+</div>
+
+<h3 class="mt-4 mb-4">Descrição</h3>
+<p class="text-secondary">{{componente.descricao}}</p>
+
+<div class="border-top">
+    <h3 class="mt-4 mb-4">Arquivo</h3>
+    <p class="text-secondary">{{componente.arquivo}}</p>
+</div>
+
+
+<div class="border-top mt-4 mb-4" ng-show="componente.tags.length > 0">
+    <h3 class="mt-4 mb-4">Tags</h3>
+    <div class="d-block" ng-repeat="tag in componente.tags">
+        <span class="card-tag mt-1 mr-2">
+            {{tag.nome}}
+        </span>
+    </div>
+</div>
+<br />
+
+<div class="border-top" ng-show="componente.exemplo">
+    <h3 class="mt-4 mb-4">Exemplo</h3>
+    <div class="rounded img-thumbnail">
+        <textarea name="exemplo" ui-codemirror ui-codemirror-opts="editorOptions" ng-model="::componente.exemplo" class="form-control no-resize code-mirror" id="exemplo" rows="8" placeholder="Exemplo"></textarea>
+    </div>
+</div>
+
+<div class="mt-4 mb-4 border-top" ng-show="componente.dependencias.length > 0">
+    <h3 class="mt-4 mb-4">Dependências</h3>
+    <ul>
+        <li class="text-secondary" ng-repeat="d in componente.dependencias">{{d.nome}} <small>{{d.versao}}</small></li>
+    </ul>
+</div>
+
+<div class="mt-4 mb-4 border-top" ng-show="componente.observacao">
+    <h3 class="mt-4 mb-4">Obervação</h3>
+    <div class="jumbotron p-4 bg-light w-100">
+        <p class="text-secondary m-0">{{componente.observacao}}</p>
+    </div>
+</div>

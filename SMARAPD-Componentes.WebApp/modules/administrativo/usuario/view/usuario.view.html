@@ -1,0 +1,68 @@
+﻿<div class="container container-view">
+    <div class="card shadow-1 mt-4 mb-4">
+        <div class="card-body">
+            <div class="row">
+
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6 text-center">
+
+                    <img class="user-image rounded-circle"
+                         ng-src="{{usuario.imagem ? usuario.imagem : defaultImage}}"
+                         alt="Imagem Default"/>
+                    
+                </div>
+
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                    <label>
+                        Nome
+                    </label>
+                    <label class="form-control">{{usuario.nome}}</label>
+
+                    <div class="row">
+
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                            <label for="publicacao">
+                                Tipo de Usuário
+                            </label>
+                            <label class="form-control">{{usuario.isSuperUsuario}}</label>
+                        </div>
+
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                            <label for="publicacao">
+                                Usuário Ativo
+                            </label>
+                            <label class="form-control">{{usuario.isAutorizadoDescricao}}</label>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="row mt-2">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                    <label>
+                        E-mail
+                    </label>
+                    <label class="form-control">{{usuario.email}}</label>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                    <label>
+                        Login
+                    </label>
+                    <label class="form-control">{{usuario.login}}</label>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <div class="float-right">
+                <button type="button"
+                        class="btn btn-outline-secondary"
+                        ng-click="voltarPagina()">
+                    <i class="far fa-arrow-alt-circle-left"></i>
+                    Voltar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+

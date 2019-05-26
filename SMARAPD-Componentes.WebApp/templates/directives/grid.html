@@ -1,0 +1,176 @@
+<div class="container">
+    <div class="row searchGridPaginationContent">
+        <div class="col">
+            <div class="input-group searchGridPaginationInput">
+                <input type="text" class="input form-control" name="buscaParametros" placeholder="Filtro de Pesquisa" maxlength="50" uib-tooltip="Filtro de Pesquisa" ng-model="textFilter" />
+            </div>
+        </div>
+
+        <div ng-show="config.buttons.length >= 0" class="col-auto buttonFormPesquisa">
+
+            <button type="button" class="btn btn-outline-primary" ng-click="applyFilter()">
+                <i class="fas fa-search"></i>
+                Pesquisar
+            </button>
+
+        </div>
+
+
+        <div ng-show="config.buttons.length >= 0" class="col-auto buttonFormLimpar">
+            <button class="btn btn-outline-secondary " ng-click="limparCampo()">
+                <i class="fas fa-eraser mr-2"></i>
+                Limpar
+            </button>
+        </div>
+
+        <!-- Aparece se não setar um botão -->
+        <div class="col-auto buttonFormPesquisaAlt" ng-show="config.buttons == undefined || config.buttons.length == 0">
+            <div>
+                <button type="button" class="btn btn-outline-primary " ng-click="applyFilter()">
+                    <i class="fas fa-search"></i>
+                    Pesquisar
+                </button>
+            </div>
+        </div>
+
+
+        <!-- Se setar apenas um botão -->
+        <div ng-show="config.buttons.length == 1" class="col-auto buttonFormPesquisa" ng-repeat="itemButton in config.buttons">
+            <button ng-click="itemButton.action()" class="btn btn-outline-primary">
+                <i class="fas fa-plus"></i>
+                {{itemButton.description}}
+            </button>
+        </div>
+
+
+        <div ng-show="config.buttons.length == 1" class="col-auto dropDownItensButton2">
+            <button class="btn btn-outline-primary dropdown ">
+                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Opções</a>
+
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" ng-click="limparCampo()">Limpar</a>
+                    <a class="dropdown-item" ng-click="applyFilter()">Pesquisar</a>
+                    <a ng-repeat="itemButton in config.buttons" class="dropdown-item" ng-click="itemButton.action()">{{itemButton.description}}</a>
+                </div>
+            </button>
+        </div>
+
+
+        <!-- Se setar mais de um botão -->
+        <div ng-show="config.buttons.length > 1" class="col-auto dropDownItensButton">
+            <button class="btn btn-outline-primary dropdown ">
+                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Opções</a>
+
+                <div class="dropdown-menu">
+                    <a class="dropdown-item dropDownLimpar" ng-click="limparCampo()">Limpar</a>
+                    <a class="dropdown-item dropDownPesquisar" ng-click="applyFilter()">Pesquisar</a>
+                    <a ng-repeat="itemButton in config.buttons" class="dropdown-item" ng-click="itemButton.action()">{{itemButton.description}}</a>
+                </div>
+            </button>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card mt-4 mb-4 shadow-1">
+                <div class="card-header">
+                    <div class="row cabecalhoLinha">
+                        <div class="cabecalhoColuna" ng-class="'col-' + item.size" ng-repeat="item in config.columns">{{item.label}}</div>
+                        <div ng-show="config.actions.length" class="col-2 cabecalhoColuna acoes">Ações</div>
+                    </div>
+                </div>
+                <div class="card-body corpoGrid">
+
+                    <div class="corpoLinhas">
+
+                        <div ng-show="exibitionList.length == 0 && !exibitionList.data" class="row"><span class="mx-auto mt-4">{{semRegistro}}</span></div>
+
+
+                        <div class="row itensLinha" ng-repeat="data in exibitionList">
+
+                            <div ng-show="data.data" class="itensColuna" ng-class="'col-' + column.size" ng-repeat="column in config.columns">
+                                <span ng-if="column.isIcon != true">
+                                    {{
+                                    :: column.maxLength && GetPropertyValue(data.data, column.value).length >
+                                    column.maxLength ?
+                                    GetPropertyValue(data.data, column.value).substring(0, column.maxLength) + "..." :
+                                    GetPropertyValue(data.data, column.value)
+                                    }}
+                                </span>
+
+                                <span ng-if="column.isIcon == true">
+                                    <i ng-class=":: GetPropertyValue(data.data, column.value) == '' ? 'fas fa-burn' : GetPropertyValue(data.data, column.value) "></i>
+                                </span>
+                            </div>
+                            <div ng-show="data.data" class="col-2 itensColuna">
+                                <span class="iconesGridPagination" ng-show="config.actions.length <= 3" ng-repeat="action in config.actions">
+                                    <a class="iconeGridPagination" ng-click="action.action(data.data)" data-toggle="tooltip"
+                                       data-placement="top" uib-tooltip="{{action.description}}">
+                                        <i ng-class=":: action.icon == '' ? 'fas fa-burn' : action.icon "></i>
+                                    </a>
+                                </span>
+
+                                <a class="iconesGridPagination" ng-show="config.actions.length > 3">
+                                    <span class="iconeGridPagination" ng-click="config.actions[0].action(data.data)"
+                                          data-toggle="tooltip" data-placement="top" uib-tooltip="{{config.actions[0].description}}">
+                                        <i ng-class=":: action.icon == '' ? 'fas fa-burn' : config.actions[0].icon "></i>
+                                    </span>
+
+                                </a>
+                                <a class="iconesGridPagination" ng-show="config.actions.length > 3">
+                                    <span class="iconeGridPagination" ng-click="config.actions[1].action(data.data)"
+                                          data-toggle="tooltip" data-placement="top" uib-tooltip="{{config.actions[1].description}}">
+                                        <i ng-class=":: action.icon == '' ? 'fas fa-burn' : config.actions[1].icon "></i>
+                                    </span>
+                                </a>
+
+
+                                <span ng-show="config.actions.length > 3" data-toggle="tooltip" data-placement="top"
+                                      uib-tooltip="Mais Informações">
+                                    <span class="dropdown ">
+                                        <a class="fa fa-bars" data-toggle="dropdown" role="button" aria-haspopup="true"
+                                           aria-expanded="false"></a>
+
+                                        <div class="dropdown-menu">
+                                            <a ng-repeat="action in config.actions" ng-if="$index >= 2" class="dropdown-item"
+                                               ng-click="action.action(data.data)">
+                                                <i ng-class=":: action.icon == '' ? 'fas fa-burn' : action.icon "></i>
+                                                {{action.description}}
+                                            </a>
+                                        </div>
+                                    </span>
+                                </span>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="row paginationContent align-items-center">
+                        <div class="col-sm-8">
+                            <ul data-ng-hide="Hide" data-ng-class="ulClass">
+                                <li uib-tooltip="{{Item.title}}" data-ng-class="Item.liClass" data-ng-repeat="Item in List">
+                                    <a data-ng-class="Item.aClass" data-ng-click="Item.action()" data-ng-bind="Item.value"
+                                       href="">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-2">
+                            <span class="totalitenspagination float-right">Total de Itens: {{total}}</span>
+                        </div>
+                        <div class="col-sm-2">
+                            <select ng-model="comboPageSelected" ng-options="page for page in comboPage" ng-change="hasChanged()"
+                                    uib-tooltip="Número de itens por página"
+                                    class="form-control dropDownPageView float-right">
+                                <option value="10">10</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

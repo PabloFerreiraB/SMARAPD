@@ -1,0 +1,26 @@
+﻿<div class="container container-view">
+    <div class="card shadow-1 m-4">
+        <div class="card-body">
+            <form name="categoriaViewForm" method="post" ng-valid="false">
+                <div class="row">
+                    <!-- Campo Nome-->
+                    <div class="form-group col-sm-6">
+                        <label>Nome</label>
+                        <label class="form-control">{{categoria.nome}}</label>
+                    </div>
+                    <!-- Campo Ícone-->
+                    <div class="form-group col-sm-6">
+                        <label>Ícone</label>
+                        <label class="form-control">{{categoria.icone}}</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="card-footer">
+            <!-- Botão Voltar-->
+            <a class="btn btn-outline-secondary float-lg-right" href="../../../#/administrativo/categoria">
+                <i class="fas fa-arrow-circle-left"></i>&nbsp;Voltar
+            </a>
+        </div>
+    </div>
+</div>

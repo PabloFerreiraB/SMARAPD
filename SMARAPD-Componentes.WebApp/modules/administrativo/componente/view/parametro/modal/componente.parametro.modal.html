@@ -1,0 +1,72 @@
+<div class="modal-demo">
+    <div class="modal-header">
+        <h3>{{title}}</h3>
+    </div>
+    <div class="modal-body">
+        <div class="container">
+            <form name="parametroEditForm" class="needs-validation" novalidate>
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <div class="form-group" show-errors='{ showSuccess: true }'>
+                            <label class="form-control-label">Nome *</label>
+                            <input class="form-control" type="text" placeholder="Nome"
+                                   name="nome" ng-model="parametro.nome" ng-required="true"
+                                   data-toggle="tooltip" title="Nome do parâmetro" maxlength="20">
+                            <div class="invalid-feedback">
+                                <i class="fas fa-exclamation-circle"></i> Campo obrigatório.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-3">
+                        <div class="form-group" show-errors='{ showSuccess: true }'>
+                            <label for="tipo">Tipo *</label>
+                            <select name="tipo" 
+                                    ng-model="parametro.tipoId" class="form-control" 
+                                    ng-options="tipo.id as tipo.nome for tipo in tipos | orderBy: 'nome'" ng-required="true"
+                                    data-toggle="tooltip" title="Tipo do parâmetro">
+                                <option disabled value="">Selecione</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                <i class="fas fa-exclamation-circle"></i> Campo obrigatório.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-3 form-group" show-errors='{ showSuccess: true }'>
+                        <label class="form-control-label" for="publicacao">Obrigatório</label>
+                        <div id="obrigatorio">
+                            <label class="switch" data-toggle="tooltip" title="Obrigatoriedade">
+                                <input type="checkbox" name="checkObrigatorio" class="primary"
+                                       ng-model="parametro.obrigatorio" data-toggle="tooltip" title="Obrigatoriedade">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <div class="invalid-feedback">
+                            <i class="fas fa-exclamation-circle"></i> Campo obrigatório.
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label class="form-control-label" for="descricao">Descrição</label>
+                            <div data-toggle="tooltip" title="Descrição do parâmetro">
+                                <textarea class="form-control no-resize" name="descricao" rows="3" maxlength="100"
+                                          placeholder="Descrição" ng-model="parametro.descricao">
+                                </textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button ng-click="fecharModal()" type="button" class="btn btn-outline-secondary mr-2" data-dismiss="modal">
+            <i class="fa fa-ban"></i> Cancelar
+        </button>
+        <button ng-click="salvarParametro(parametro)" class="btn btn-outline-primary">
+            <i class="fa fa-save"></i> Salvar
+        </button>
+    </div>
+</div>

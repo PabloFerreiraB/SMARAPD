@@ -1,0 +1,202 @@
+﻿<div class="container">
+    <form class="mt-5 mb-5" name="buscaForm" novalidate>
+        <div class="row ">
+            <div class="col-auto ml-auto">
+                <button type="button" ng-click="setBusca()" ng-hide="buscaAvancada" class="ml-1 btn btn-link no-transition">Busca avançada</button>
+                <button type="button" ng-click="setBusca()" ng-show="buscaAvancada" class="ml-1 btn btn-link no-transition">Busca simples</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <input type="search"
+                           class="form-control"
+                           name="busca"
+                           maxlength="60"
+                           placeholder="Filtro de Pesquisa"
+                           uib-tooltip="Filtro de Pesquisa"
+                           ng-model="busca.Pesquisa" />
+                </div>
+            </div>
+        </div>
+
+        <!-- BUSCA AVANCADA -->
+        <div class="fade-show mb-3" ng-show="buscaAvancada">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="input-group">
+                        <input type="text"
+                               class="input form-control"
+                               name="buscaParametros"
+                               uib-tooltip="Pesquisar por parâmetro"
+                               placeholder="Parâmetros"
+                               ng-model="busca.Parametro" />
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="input-group">
+                        <input type="text"
+                               class="form-control"
+                               name="buscaMetodos"
+                               uib-tooltip="Pesquisar por método"
+                               placeholder="Métodos"
+                               ng-model="busca.Metodo" />
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="input-group">
+                        <input type="text"
+                               class="form-control"
+                               name="buscaEventos"
+                               placeholder="Eventos"
+                               uib-tooltip="Pesquisar por evento"
+                               ng-model="busca.Evento" />
+                    </div>
+                </div>
+
+            </div>
+            <div class="row mt-3">
+                <div class="col-sm-12">
+                    <tags-input placeholder="Tags"
+                                ng-model="busca.Tags"
+                                display-property="nome"
+                                name="tags"
+                                uib-tooltip="Pesquisar por tag"
+                                add-from-autocomplete-only="true"
+                                text="text">
+                        <auto-complete source="getTags($query)" min-length="0"
+                                       max-results-to-show="10" select-first-match="false">
+                        </auto-complete>
+                    </tags-input>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-auto ml-auto">
+                <button type="reset"
+                        class="btn btn-outline-secondary mr-2"
+                        ng-click="limpar()">
+                    <i class="fas fa-eraser mr-2"></i>Limpar
+                </button>
+
+                <button type="submit"
+                        class="btn btn-outline-primary"
+                        ng-click="pesquisa()"
+                        ng-disabled="!busca.Pesquisa && !busca.Parametro && !busca.Metodo && !busca.Evento && busca.Tags.length == 0">
+                    <i class="fas fa-search mr-2"></i>Pesquisar
+                </button>
+            </div>
+        </div>
+        <!-- BUSCA AVANCADA ENDS -->
+    </form>
+
+    <div ng-hide="mostraResultado">
+        <h3 class="mt-5 pt-2 text-center">Busca rápida por categoria</h3>
+        <div class="row text-center mt-2 margem-card" ng-class="categorias.length > 4 ? 'justify-content-start' : 'justify-content-center'">
+            <div align="center" class="col-sm-3 pl-5 pr-5" ng-repeat="categoria in categorias">
+                <div class="card card-home mt-5" ng-click="pesquisaCategoria(categoria.id)">
+                    <div class="card-body">
+                        <i class="{{categoria.icone}} card-icon fa-2x text-white mt-4 mb-2"></i>
+                    </div>
+                    <div class="card-footer noborder mb-4">
+                        <h5 class="card-text">{{categoria.nome}}</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--BUSCA SIMPLES-->
+    <div ng-show="mostraResultado" class="mt-5">
+
+        <div class="row pb-0">
+            <div class="col">
+                <h3 class="mb-0 mt-1">Componentes</h3>
+            </div>
+            <div class="col-auto">
+                <button class="btn btn-outline-secondary ml-auto d-inline float-right" ng-click="limpar()"><i class="far fa-arrow-alt-circle-left mr-2"></i>Voltar</button>
+            </div>
+        </div>
+
+
+        <div class="card mt-5 mb-3 shadow-2 card-resultado" ng-repeat="resultado in resultadoBuscaPadrao">
+            <div class="card-body">
+                <div class="card-title d-inline-block">
+                    <h4 ng-click="NavigateToComponente(resultado.id)">{{resultado.nome}}</h4>
+                </div>
+                <p class="mb-3 text-secondary">{{resultado.descricao}}</p>
+                <div class="d-inline mt-3 mb-0">
+                    <p class="cool-link mr-3 mb-0" ng-show="resultado.hasParametros" ng-click="NavigateToComponenteTab(resultado.id, 'parametros')">Parâmetros</p>
+                    <p class="cool-link mr-3 mb-0" ng-show="resultado.hasEventos" ng-click="NavigateToComponenteTab(resultado.id, 'eventos')">Eventos</p>
+                    <p class="cool-link mr-3 mb-0" ng-show="resultado.hasMetodos" ng-click="NavigateToComponenteTab(resultado.id, 'metodos')">Métodos</p>
+
+                </div>
+                <div class="d-block mt-3" ng-repeat="tag in resultado.tags">
+                    <span class="card-tag mt-1 mr-2">
+                        {{tag.nome}}
+                    </span>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <small><i class="fas fa-user-circle ml-2"></i> {{resultado.usuario}}</small>
+                    </div>
+                    <div class="col-sm-3">
+                        <small><i class="far fa-clock ml-2"></i> {{resultado.dataCriacao | date:'dd/MM/yyyy'}}</small>
+                    </div>
+                    <div class="col-sm-3">
+                        <small>{{resultado.categoria}}</small>
+                    </div>
+                    <div class="col-sm-3">
+                        <small><i class="{{resultado.framework}} fa-2x ml-2"></i></small>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!--BUSCA POR CATEGORIA-->
+    <div ng-show="mostraResultado" class="mb-5">
+        <div class="card mt-5 mb-3 shadow-2 card-resultado" ng-repeat="resultadoCategoria in resultadoBuscaPorCategoria">
+            <div class="card-body">
+                <h4 class="card-title d-inline-block" ng-click="NavigateToComponente(resultadoCategoria.id)">{{resultadoCategoria.nome}}</h4>
+                <p class="mb-3 text-secondary">
+                    {{resultadoCategoria.descricao}}
+                </p>
+                <div class="d-inline mt-3">
+                    <p class="cool-link mr-3 mb-0" ng-show="resultadoCategoria.hasParametros" ng-click="NavigateToComponenteTab(resultadoCategoria.id, 'parametros')">Parâmetros</p>
+                    <p class="cool-link mr-3 mb-0" ng-show="resultadoCategoria.hasEventos" ng-click="NavigateToComponenteTab(resultadoCategoria.id, 'eventos')">Eventos</p>
+                    <p class="cool-link mr-3 mb-0" ng-show="resultadoCategoria.hasMetodos" ng-click="NavigateToComponenteTab(resultadoCategoria.id, 'metodos')">Métodos</p>
+
+                </div>
+                <div class="d-block mt-3" ng-repeat="tag in resultadoCategoria.tags">
+                    <span class="card-tag mt-1 mr-2">
+                        {{tag.nome}}
+                    </span>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <small><i class="fas fa-user-circle ml-2"></i> {{resultadoCategoria.usuario}}</small>
+                    </div>
+                    <div class="col-sm-2">
+                        <small><i class="far fa-clock ml-2"></i> {{resultadoCategoria.dataCriacao | date:'dd/MM/yyyy'}}</small>
+                    </div>
+                    <div class="col-sm-2">
+                        <small>{{resultadoCategoria.categoria}}</small>
+                    </div>
+                    <div class="col-sm-2">
+                        <small><i class="{{resultadoCategoria.framework}} ml-2"></i> </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

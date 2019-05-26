@@ -1,0 +1,77 @@
+﻿<div class="container">
+
+    <div class="card shadow-1 mt-4 mb-4">
+
+        <div class="card-body">
+
+            <form name="dependenciaNewForm" method="POST" class="needs-validation" novalidate>
+
+                <div class="row">
+
+                    <div class="form-group col-sm-7" show-errors='{ showSuccess: true }'>
+                        <label class="form-control-label" for="inputNome">Nome *</label>
+
+                        <input type="text" id="inputNome" class="form-control" name="nome" placeholder="Nome"
+                               ng-model="dependencia.nome" minlength="0" maxlength="40" uib-tooltip="Nome" required>
+
+                        <div class="invalid-feedback"><i class="fas fa-exclamation-circle"></i> Campo obrigatório.</div>
+                    </div>
+
+
+                    <div class="form-group col-sm-3" show-errors='{ showSuccess: true }'>
+                        <label class="form-control-label" for="inputVersao">Versão *</label>
+
+                        <input type="text" name="versao" id="inputVersao" class="form-control" placeholder="Versão"
+                               ng-model="dependencia.versao" minlength="0" maxlength="15" uib-tooltip="Versão" required>
+
+                        <div class="invalid-feedback"><i class="fas fa-exclamation-circle"></i> Campo obrigatório.</div>
+                    </div>
+
+
+                    <div class="form-group col-sm-2" show-errors='{ showSuccess: true }'>
+                        <label for="selectStatus">Status *</label>
+
+                        <select name="status" id="selectStatus" class="form-control" ng-options="s.value as s.nome for s in status"
+                                ng-model="dependencia.status" uib-tooltip="Status" required>
+                            <option value="" disabled>Selecione</option>
+                        </select>
+
+                        <div class="invalid-feedback"><i class="fas fa-exclamation-circle"></i> Campo obrigatório.</div>
+                    </div>
+
+
+                    <div class="form-group col-sm-12">
+                        <label class="form-control-label" for="inputUrl">URL</label>
+
+                        <input type="text" name="url" id="inputUrl" class="form-control" placeholder="Informe o link de referência"
+                               ng-model="dependencia.url" maxlength="1000" uib-tooltip="Link de referência">
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+
+
+        <!-- Footer -->
+        <div class="card-footer">
+
+            <div class="form-row float-right">
+                <div class="col-sm-12">
+
+                    <button type="button" class="btn btn-outline-secondary" ng-click="cancelar()">
+                        <i class="fas fa-ban"></i> Cancelar
+                    </button>
+
+                    <button type="submit" class="btn btn-outline-primary ml-2" ng-click="save(dependencia)">
+                        <i class="fas fa-save"></i> Salvar
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+</div>

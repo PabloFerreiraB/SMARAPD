@@ -1,0 +1,55 @@
+﻿<div class="container">
+    <div class="shadow-1 card-form">
+        <!-- Abas nav -->
+        <ul class="nav nav-pills nav-fill text-white mt-4 p-0" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="basico-tab" data-toggle="tab" href="#basico" role="tab" aria-controls="basico" aria-selected="true">Básico</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="parametro-tab" data-toggle="tab" href="#parametros" role="tab" aria-controls="parametros" aria-selected="false">Parâmetros</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="eventos-tab" data-toggle="tab" href="#eventos" role="tab" aria-controls="eventos" aria-selected="false">Eventos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="metodos-tab" data-toggle="tab" href="#metodos" role="tab" aria-controls="metodos" aria-selected="false">Métodos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="dependencias-tab" data-toggle="tab" href="#dependencias" role="tab" aria-controls="dependencias" aria-selected="false">Dependências</a>
+            </li>
+        </ul>
+
+        <div class="card p-0 mb-4">
+            <div class="card-body">
+                <!-- Painel de abas -->
+                <div class="tab-content">
+                    <div class="tab-pane active" id="basico" role="tabpanel" aria-labelledby="basico-tab">
+                        <div ng-include="'/modules/administrativo/componente/view/basico/componente.basico.html'"></div>
+                    </div>
+                    <div class="tab-pane" id="parametros" role="tabpanel" aria-labelledby="parametros-tab">
+                        <div ng-include="'/modules/administrativo/componente/view/parametro/componente.parametro.html'"
+                             ng-controller="componenteParametroEditController"></div>
+                    </div>
+                    <div class="tab-pane" id="eventos" role="tabpanel" aria-labelledby="eventos-tab">
+                        <div ng-include="'/modules/administrativo/componente/view/evento/componente.evento.html'"
+                             ng-controller="componenteEventoEditController"></div>
+                    </div>
+                    <div class="tab-pane" id="metodos" role="tabpanel" aria-labelledby="metodos-tab">
+                        <div ng-include="'/modules/administrativo/componente/view/metodo/componente.metodo.html'"
+                             ng-controller="componenteMetodoEditController"></div>
+                    </div>
+                    <div class="tab-pane" id="dependencias" role="tabpanel" aria-labelledby="dependencias-tab">
+                        <div ng-include="'/modules/administrativo/componente/view/dependencia/componente.dependencia.html'"
+                             ng-controller="componenteDependenciaEditController"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="float-right">
+                    <button class="btn btn-outline-secondary" ng-click="cancelar()"><i class="fas fa-ban mr-2"></i>Cancelar</button>
+                    <button class="btn btn-outline-primary ml-3" ng-click="salvarComponente()"><i class="fas fa-save mr-2"></i>Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

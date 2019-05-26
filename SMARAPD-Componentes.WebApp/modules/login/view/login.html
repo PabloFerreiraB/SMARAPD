@@ -1,0 +1,35 @@
+﻿<div class="form-group col-lg-4 mx-auto">
+    <div class="card shadow-2 mt-5">
+        <div class="text-center">
+            <img src="/assets/img/icone.png" alt="logo" width="250"/>
+            <h2 class="text-secondary mt-3">SMAR<small>Docs</small></h2>
+        </div>
+        <div class="card-body">
+            <form name="loginForm" novalidate>
+                <div class="form-group">
+                    <div class="form-group" show-errors='{ showSuccess: true }'>
+                        <input type="text" ng-required="true" class="form-control form-control-lg mb-1"
+                               placeholder="Usuário" name="usuario" ng-model="usuario.userName" />
+                        <div class="invalid-feedback">
+                            <i class="fas fa-exclamation-circle"></i> Campo obrigatório.
+                        </div>
+                    </div>
+
+                    <div class="form-group" show-errors='{ showSuccess: true }'>
+                        <input type="password" ng-required="true" class="form-control form-control-lg"
+                               placeholder="Senha" name="senha" ng-model="usuario.password" />
+                        <div class="invalid-feedback">
+                            <i class="fas fa-exclamation-circle"></i> Campo obrigatório.
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-block btn-lg btn-primary float-right mt-3 mb-3" ng-click="logar()">Logar</button>
+                    <p class="text-center">
+                        Não possui cadastro?
+                        <button class="btn btn-link" ng-click="cadastrar()"> Cadastre-se</button>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

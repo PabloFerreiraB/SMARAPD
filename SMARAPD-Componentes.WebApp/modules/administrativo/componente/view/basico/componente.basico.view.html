@@ -1,0 +1,81 @@
+﻿<div class="container-view">
+    <div class="row">
+        <div class="col-7">
+            <label for="nome">
+                Nome
+            </label>
+            <label class="form-control">{{componente.nome}}</label>
+        </div>
+        <div class="col-3">
+            <label for="status">
+                Status
+            </label>
+            <label class="form-control">{{componente.status}}</label>
+        </div>
+        <div class="col-2">
+            <label for="publicacao">
+                Publicado
+            </label>
+            <label class="form-control">{{componente.publicado}}</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <label for="Descricao">
+                Descrição
+            </label>
+            <textarea class="form-control no-resize d-inline-block" rows="4" disabled>{{componente.descricao}} </textarea>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <label for="Categoria">
+                Categoria
+            </label>
+            <label class="form-control">{{componente.categoria.nome}}</label>
+        </div>
+        <div class="col-4">
+            <label for="Framework">
+                Framework
+            </label>
+            <label class="form-control">{{componente.framework.nome}}</label>
+        </div>
+        <div class="col-4">
+            <label for="Arquivo">
+                Arquivo
+            </label>
+            <label class="form-control">{{componente.arquivo}}</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <label for="Observacao">
+                Observação
+            </label>
+            <textarea class="form-control no-resize d-inline-block" rows="8" disabled>{{componente.observacao}} </textarea>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <label for="exemplo">Exemplo</label>
+            <textarea name="exemplo" ui-codemirror ui-codemirror-opts="editorOptions" ng-model="componente.exemplo" class="form-control no-resize" id="exemplo" rows="8" placeholder="Exemplo"></textarea>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <label for="Tags">Tags</label>
+            <label ng-if="tagString" class="form-control">{{tagString}}</label>
+            <label ng-if="tagString == []" class="form-control"></label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <label for="Imagem">
+                Imagem
+            </label>
+            <div>
+                <img class="img-thumbnail img-fluid mb-3" ng-src="{{componente.urlImagem ? componente.urlImagem : defaultImage}}" />
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,144 @@
+﻿<div class="container">
+    <div class="card shadow-1 mt-4 mb-4">
+        <div class="card-body">
+            <form name="cadastroUsuario" method="post" novalidate>
+                <div class="row">
+
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 text-center">
+                        <div class="form-group">
+                            <div>
+                                <img class="user-image rounded-circle"
+                                     ng-src="{{usuario.imagem ? usuario.imagem : defaultImage}}"
+                                     alt="Imagem Default" />
+                            </div>
+                            <input class="form-control mt-3" 
+                                   value="1000000"
+                                   uib-tooltip="Imagem do Componente"
+                                   name="imagem"
+                                   type="file"
+                                   accept="image/jpeg, image/png"
+                                   onchange="angular.element(this).scope().openfile(this.files[0])" 
+                                   id="imagem">
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+
+                        <div class="form-group" show-errors='{ showSuccess: true }'>
+                            <label>Nome *</label>
+                                <input class="form-control"
+                                       type="text"
+                                       placeholder="Nome"
+                                       name="nome"
+                                       maxlength="30"
+                                       ui-Nome
+                                       uib-tooltip="Nome"
+                                       ng-trim="false"
+                                       ng-model="usuario.nome"
+                                       ng-required="true">
+                            <div class="invalid-feedback">
+                                <i class="fas fa-exclamation-circle"></i> Campo obrigatório.
+                            </div>
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                                <div class="form-group" show-errors='{ showSuccess: true }'>
+                                    <label>
+                                        Tipo de Usuário *
+                                    </label>
+                                    <select class="form-control"
+                                            uib-tooltip="Tipo de Usuário"
+                                            name="tipodeUsuario"
+                                            ng-model="usuario.isSuperUsuario"
+                                            ng-options="usuario for usuario in tipoUsuario"
+                                            ng-required="true">
+                                        <option disabled value="">Selecione</option>
+                                    </select>
+
+                                    <div class="invalid-feedback">
+                                        <i class="fas fa-exclamation-circle"></i> Campo obrigatório.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                                <label>
+                                    Usuário Ativo
+                                </label>
+                                <div class="form-group">
+                                    <label class="switch">
+                                        <input class="primary form-control"
+                                               type="checkbox"
+                                               uib-tooltip="Tipo de usuário"
+                                               name="checkObrigatorio"
+                                               ng-model="usuario.isAutorizado" />
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                        <div class="form-group" show-errors='{ showSuccess: true }'>
+                            <label>E-mail *</label>
+                                <input class="form-control"
+                                       type="email"
+                                       placeholder="E-mail"
+                                       name="email"
+                                       maxlength="35"
+                                       uib-tooltip="E-mail"
+                                       ng-model="usuario.email"
+                                       ng-required="true">
+                            <div class="invalid-feedback">
+                                <i class="fas fa-exclamation-circle"></i> Campo obrigatório.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                        <div class="form-group" show-errors='{ showSuccess: true }'>
+                            <label>Login *</label>
+                                <input class="form-control"
+                                       type="text"
+                                       placeholder="Login"
+                                       name="login"
+                                       maxlength="20"
+                                       uib-tooltip="Login"
+                                       ng-model="usuario.login"
+                                       ng-required="true">
+                            <div class="invalid-feedback">
+                                <i class="fas fa-exclamation-circle"></i> Campo obrigatório.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+
+        <div class="card-footer">
+            <div class="float-right">
+                <button type="button"
+                        class="btn btn-outline-secondary"
+                        ng-click="voltarPagina()">
+                    <i class="fas fa-ban"></i>
+                    Cancelar
+                </button>
+                <button type="button"
+                        class="btn btn-outline-primary ml-2"
+                        ng-click="putUsuario(usuario)">
+                    <i class="fas fa-save"></i>
+                    Salvar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,122 @@
+﻿<div class="container">
+    <div class="row text-center mt-5">
+
+        <!-- COL 1 -->
+        <div class="col-sm-3">
+            <div class="card card-1 shadow-1 card-admin">
+                <div class="card-img-top">
+                    <i class="fas fa-user-alt fa-3x mt-4"></i>
+                </div>
+                <h3 class="card-title mt-3">
+                    Usuario
+                </h3>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush text-left">
+                        <li class="list-group-item lista-acoes text-left" ng-click="goUsuarioGrid()">
+                            <i class="fas fa-list-ul text-info mr-2"></i>
+                            Listar
+                        </li>
+
+                        <li class="list-group-item lista-acoes text-left" ng-click="goUsuarioNew()">
+                            <i class="fas fa-plus text-info mr-2"></i>
+                            Incluir
+                        </li>
+                        <li class="list-group-item lista-acoes text-left" ng-click="goUsuarioAutorizacao()">
+                            <i class="far fa-check-square text-success mr-2"></i>
+                                Autorizar 
+                            <span class="badge badge-primary float-right mt-1" ng-if="naoAutorizados > 0">
+                                {{naoAutorizados}}
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- COL 2 -->
+        <div class="col-sm-3">
+            <div class="card card-1 shadow-1 card-admin">
+                <div class="card-img-top">
+                    <i class="fas fa-cube fa-3x mt-4"></i>
+                </div>
+                <h3 class="card-title mt-3">
+                    Componente
+                </h3>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush  text-left">
+
+                        <li class="list-group-item lista-acoes text-left" ng-click="goComponenteGrid()">
+                            <i class="fas fa-list-ul text-info mr-2"></i>
+                            Listar
+                        </li>
+                        <li class="list-group-item lista-acoes text-left" ng-click="goComponenteNew()">
+                            <i class="fas fa-plus text-info mr-2"></i>
+                            Incluir
+                        </li>
+                        <li class="list-group-item lista-acoes text-left" ng-click="goComponenteHistorico()">
+                            <i class="fas fa-history text-info mr-2"></i>
+                            Histórico
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- COL 3 -->
+        <div class="col-sm-3">
+            <div class="card card-1 shadow-1 card-admin">
+                <div class="card-img-top">
+                    <i class="fas fa-th-large fa-3x mt-4"></i>
+                </div>
+                <h3 class="card-title mt-3">
+                    Categoria
+                </h3>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush text-left">
+                        <li class="list-group-item lista-acoes text-left" ng-click="goCategoriaGrid()">
+                            <i class="fas fa-list-ul text-info mr-2"></i>
+                            Listar
+                        </li>
+                        <li class="list-group-item lista-acoes text-left" ng-click="goCategoriaNew()">
+                            <i class="fas fa-plus text-info mr-2"></i>
+                            Incluir
+                        </li>
+                        <li class="list-group-item lista-acoes text-left mb-4">
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- COL 4 -->
+        <div class="col-sm-3">
+            <div class="card card-1 shadow-1 card-admin">
+                <div class="card-img-top">
+                    <i class="fas fas fa-sitemap fa-3x mt-4"></i>
+                </div>
+                <h3 class="card-title mt-3">
+                    Dependência
+                </h3>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush text-left">
+                        <li class="list-group-item lista-acoes text-left" ng-click="goDependenciaGrid()">
+                            <i class="fas fa-list-ul text-info mr-2"></i>
+                            Listar
+                        </li>
+
+                        <li class="list-group-item lista-acoes text-left" ng-click="goDependenciaoNew()">
+                            <i class="fas fa-plus text-info mr-2"></i>
+                            Incluir
+                        </li>
+                        <li class="list-group-item lista-acoes text-left mb-4">
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

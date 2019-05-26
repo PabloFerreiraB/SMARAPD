@@ -1,0 +1,66 @@
+﻿<div class="card shadow-1 m-4 mb-3">
+    <div class="card-body">
+        <div class="container-fluid">
+            <form>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="mt-3 mr-2">Operação</label>
+                            <select ng-model="filtroInseridos" class="form-control">
+                                <option value="">Selecione</option>
+                                <option value="insert">Inserir</option>
+                                <option value="update">Modificar</option>
+                                <option value="delete">Deletar</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="form-group">
+                            <label class="mt-3 mr-2">Nome componente</label>
+                            <input ng-model="filtroComponente" type="text" placeholder="Componente" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="mt-3 shadow-1 historico-view">
+                <div ng-repeat="historico in historicos | filter: {operacao: filtroInseridos, nomeComponente: filtroComponente}">
+
+                    <!--<div class="card card-add shadow-2 mt-3 mb-3 mx-3 p-0" ng-show="historico.operacao == 'INSERT'  && !(historico.tabela == 'Parâmetro Método' || historico.tabela == 'Parâmetro Evento'")>
+                        <div class="card-body bg-lightgrey py-2">
+                            <p>{{historico.resultado}}<u><a style="cursor: pointer"></a></u></p>
+                            <button class="btn btn-link p-0 mt-0" ng-click="abrirModal(historico)">Detalhes</button>
+                        </div>
+                    </div>-->
+
+                    <div class="card card-add shadow-2 mt-3 mb-3 mx-3 p-0" ng-show="historico.operacao == 'INSERT'">
+                        <div class="card-body bg-lightgrey py-2">
+                            <p>{{historico.resultado}}<u><a style="cursor: pointer"></a></u></p>
+                            <button class="btn btn-link p-0 mt-0" ng-click="abrirModal(historico)">Detalhes</button>
+                        </div>
+                    </div>
+
+                    <!--<div class="card card-update shadow-2 mt-3 mb-3 mx-3 p-0" ng-show="historico.operacao == 'UPDATE' || (historico.tabela == 'Parâmetro Método' || historico.tabela == 'Parâmetro Evento'" )>
+                        <div class="card-body bg-lightgrey py-2">
+                            <p>{{historico.resultado}}<u><a style="cursor: pointer"></a></u></p>
+                            <button class="btn btn-link p-0 mt-0" ng-click="abrirModal(historico)">Detalhes</button>
+                        </div>
+                    </div>-->
+
+                    <div class="card card-update shadow-2 mt-3 mb-3 mx-3 p-0" ng-show="historico.operacao == 'UPDATE'" )>
+                        <div class="card-body bg-lightgrey py-2">
+                            <p>{{historico.resultado}}<u><a style="cursor: pointer"></a></u></p>
+                            <button class="btn btn-link p-0 mt-0" ng-click="abrirModal(historico)">Detalhes</button>
+                        </div>
+                    </div>
+
+                    <div class="card card-delete shadow-2 mt-3 mx-3 mb-3 p-0" ng-show="historico.operacao == 'DELETE'">
+                        <div class="card-body bg-lightgrey py-2">
+                            <p>{{historico.resultado}}<u><a style="cursor: pointer"></a></u></p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

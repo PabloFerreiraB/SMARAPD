@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        body {
+            font-family: "Helvetica";
+        }
+        
+        .center {
+            margin: auto;
+            width: 50%;
+        }
+        
+        .main-div {
+            border: 1px solid #efefef;
+        }
+        
+        .p-body {
+            padding: 0 56px 28px 56px;
+        }
+        
+        .p-title {
+            padding: 56px 56px 28px 56px;
+        }
+        
+        .p-disabled {
+            padding: 20px 20px;
+        }
+        
+        .p-btn {
+            padding-bottom: 20px;
+            text-align: center;
+        }
+        
+        .text-title {
+            line-height: 28px;
+            font-size: 18px; 
+            color: #333;
+            font-weight:bold;
+        }
+        
+        .text-body {
+            line-height: 28px;
+            font-size: 18px; 
+            color: #333;
+        }
+        
+        .text-disabled {
+            text-align: center;
+            line-height: 28px;
+            font-size: 16px; 
+            color: #9E9E9E;
+        }
+        
+        .image {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 80px;
+        }
+        
+        .btn {
+            background-color:#03A9F4;
+            border-radius:50px;
+            color:#ffffff !important;
+            display:inline-block;
+            font-size:18px;
+            line-height:44px;
+            text-align:center;
+            text-decoration:none;
+            width:250px;
+            -webkit-text-size-adjust:none;
+        }
+    </style>
+    <title>Usuário autorizado</title>
+</head>
+<body>
+    <div class="center main-div">
+        <div class="text-title p-title">Olá!</div>
+        <div class="p-body text-body">
+			O usuário <strong>{email}</strong> está requisitando acesso ao SmarDocs,
+			para avaliar as aplicações clique no botão abaixo.
+		</div>
+        <div class="p-btn text-body">
+            <a class="btn" href="http://localhost:9980/#/administrativo/usuario/editAtivacao">Autorizar usuários</a>
+        </div>
+    </div>
+    <div>
+        <div class="p-disabled text-disabled">
+            Se você não deveria receber este email, por favor <a href="mailto:componente.smarapd@gmail.com">entre em contato</a>!
+        </div>
+        <a  style="border: 0;" href="http://localhost:9980">
+            <img    class="image" 
+                alt="Componentes" 
+                src="http://PD-30:9982/Images/255df75b-adb8-4ed6-84fe-027083b14747.png"/>
+        </a>
+    </div>
+</body>
+</html>
